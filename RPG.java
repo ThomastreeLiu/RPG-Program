@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class RPG {
-    int process = 0;
+    private static int process= 0;
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         String again = "y";
@@ -22,7 +22,9 @@ public class RPG {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            if (process==0){
 
+            }
 
 
         }
