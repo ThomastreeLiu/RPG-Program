@@ -1,6 +1,14 @@
 import java.util.Scanner;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 public class RPG {
     private static int process= 0;
+    private KeyboardPanel keyboardPanel = new KeyboardPanel();
+    public KeyEventDemo(){
+        add( keyboardPanel);
+        keyboardPanel.setFocusable(true);
+    }
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         String again = "y";
@@ -22,6 +30,7 @@ public class RPG {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            String press = getKeychar
             if (process==0){
 
             }
@@ -31,6 +40,16 @@ public class RPG {
     }
     public void task1(Scanner scan){
         System.out.println("Task1");
+        System.out.println("1941, Europe.\n" +
+                "Nazi Germany invade most country in west europe. Now they aim their goal to British, \n" +
+                "but Royal airforce and Royal navy block them in east coast of atlantic ocean. \n" +
+                "To invade British, Hitler make a plan: \n" +
+                "Operation Sea Lion");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         if (process==0) {
             process = 1;
@@ -52,5 +71,8 @@ public class RPG {
     }
     public void train(Scanner scan){
         System.out.println("Welcome to training task");
+    }
+
+    private class KeyboardPanel {
     }
 }
