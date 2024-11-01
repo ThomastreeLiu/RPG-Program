@@ -1,20 +1,18 @@
 import java.util.*;
 public class RPG_Project {
     private static int process = 000;
+    private static int con = 1;
 
     public static void main(String[] args) {
-
-
         Scanner scan = new Scanner(System.in);
-
-        introduction(scan);
-
+        while (con == 1) {
+            introduction(scan);
+        }
+        System.out.println("Thanks for playing");
     }
 
 
     public static void task1(Scanner scan) {
-
-
         System.out.println("1941, Europe.\n" +
                 "Nazi Germany invade most country in west europe. Now they aim their goal to British, \n" +
                 "but Royal air force and Royal navy block them in east coast of atlantic ocean. \n" +
@@ -26,12 +24,13 @@ public class RPG_Project {
             throw new RuntimeException(e);
         }
         System.out.println("Press any key");
-        char anykey = scan.nextLine().charAt(0);
+        String anykey = scan.nextLine();
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
         System.out.println("You are a pilot of Supermarine Walrus, as usual, you take off from sea to " +
                 "scouting the german front coast");
         System.out.println("\n" +
@@ -68,7 +67,7 @@ public class RPG_Project {
                 "\n");
         //https://www.asciiart.eu/image-to-ascii
         System.out.println("Press any key");
-        anykey = scan.nextLine().charAt(0);
+        anykey = scan.nextLine();
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         try {
@@ -76,6 +75,7 @@ public class RPG_Project {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
         System.out.println("you saw some black point in the sky of the coast.");
         System.out.println("                                                   X                            \n" +
                 "           X X  X                         X   X                      X   X      \n" +
@@ -119,27 +119,9 @@ public class RPG_Project {
 
         System.out.println("\nThis is task two.");
 
-        System.out.print("Continue?(y/n) ");
 
-        char cont = scan.nextLine().charAt(0);
-
-
-        if (cont == 'n') {
-
-
-            System.out.println("Try task two again. ");
-
-            task2(scan);
-
-        } else {
-
-
-            System.out.println("Good job. You move on. ");
-
-            task3(scan);
-
-        }
-
+        if (process%100<10)
+            process=process+10;
     }
 
 
@@ -148,27 +130,8 @@ public class RPG_Project {
 
         System.out.println("\nThis is the task three.");
 
-        System.out.print("Continue?(y/n) ");
-
-        char cont = scan.nextLine().charAt(0);
-
-
-        if (cont == 'n') {
-
-
-            System.out.println("Try task again. ");
-
-            task3(scan);
-
-        } else {
-
-
-            System.out.println("Good job. You move on. ");
-
-            conclusion(scan);
-
-        }
-
+        if (process<100)
+            process=process+100;
     }
 
     private static void conclusion(Scanner scan) {
@@ -195,7 +158,10 @@ public class RPG_Project {
         System.out.println("3.Aftermath");
         if (process % 100 < 10)
             System.out.println(" (Not available now)");
+        System.out.println("\n\n5.Save the game"+"   6.Enter the game code"+"   7.Test mode(all task will be available)" +
+                "\n8.Exit the game");
         System.out.println("select the task and enter its number");
+
         int select = scan.nextInt();
         if (select == 1)
             task1(scan);
@@ -204,11 +170,26 @@ public class RPG_Project {
                 System.out.println("Not able, finish task1 to make it available.");
             else
                 task2(scan);
-        } else if (select == 3) {
+        }
+        else if (select == 3) {
             if (process % 100 < 10)
                 System.out.println("Not able, finish task2 to make it available.");
             else
                 task3(scan);
+
+        }
+        else if (select == 5) {
+            System.out.println("Your game code is "+process+", enter that in selection 6 to continue your game");
+        }
+        else if (select == 6) {
+            System.out.println("Enter your game code");
+            process = scan.nextInt();
+        }
+        else if (select == 7) {
+            process = 111;
+        }
+        else if (select == 8) {
+            con = 0;
         }
     }
 }
