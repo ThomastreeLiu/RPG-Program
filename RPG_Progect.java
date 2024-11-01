@@ -1,7 +1,8 @@
 import java.util.*;
 public class RPG_Progect {
-    public static void main(String args[]){
+    private static int process = 000;
 
+    public static void main(String args[]) {
 
 
         Scanner scan = new Scanner(System.in);
@@ -11,9 +12,7 @@ public class RPG_Progect {
     }
 
 
-
-    public static void task1(Scanner scan){
-
+    public static void task1(Scanner scan) {
 
 
         System.out.println("1941, Europe.\n" +
@@ -73,7 +72,7 @@ public class RPG_Progect {
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -107,38 +106,15 @@ public class RPG_Progect {
         System.out.println("Before this mission, your assistant told you British and Germany are in war, \n" +
                 "but you look down upon. Now you treat this as a truth. You ask your copilot take a picture, \n" +
                 "");
-        System.out.print("Continue?(y/n) ");
-
-        char cont = scan.nextLine().charAt(0);
 
 
-
-        if(cont == 'n'){
-
-
-
-            System.out.println("Try task one again. ");
-
-            task1(scan);
-
-        }
-
-        else{
-
-
-
-            System.out.println("Good job. You move on. ");
-
-            task2(scan);
-
-        }
+        if ((process % 100) % 10 == 0)
+            process = process + 1;
 
     }
 
 
-
-    public static void task2(Scanner scan){
-
+    public static void task2(Scanner scan) {
 
 
         System.out.println("\nThis is task two.");
@@ -148,19 +124,14 @@ public class RPG_Progect {
         char cont = scan.nextLine().charAt(0);
 
 
-
-        if(cont == 'n'){
-
+        if (cont == 'n') {
 
 
             System.out.println("Try task two again. ");
 
             task2(scan);
 
-        }
-
-        else{
-
+        } else {
 
 
             System.out.println("Good job. You move on. ");
@@ -172,9 +143,7 @@ public class RPG_Progect {
     }
 
 
-
-    public static void task3(Scanner scan){
-
+    public static void task3(Scanner scan) {
 
 
         System.out.println("\nThis is the task three.");
@@ -184,19 +153,14 @@ public class RPG_Progect {
         char cont = scan.nextLine().charAt(0);
 
 
-
-        if(cont == 'n'){
-
+        if (cont == 'n') {
 
 
             System.out.println("Try task again. ");
 
             task3(scan);
 
-        }
-
-        else{
-
+        } else {
 
 
             System.out.println("Good job. You move on. ");
@@ -207,11 +171,11 @@ public class RPG_Progect {
 
     }
 
+    private static void conclusion(Scanner scan) {
+        System.out.println("you have done the game, good job.");
+    }
 
-
-    public static void introduction(Scanner scan){
-
-
+    public static void introduction(Scanner scan) {
 
         System.out.println(" ____        _   _   _              _                    \n" +
                 "| __ )  __ _| |_| |_| | ___    __ _| |__   _____   _____ \n" +
@@ -224,17 +188,27 @@ public class RPG_Progect {
                 "|____/|_|  |_|\\__|_|___/_| |_|                           \n" +
                 "\n");
 
-        task1(scan);
-
-    }
-
-
-
-    public static void conclusion(Scanner scan){
-
-
-
-        System.out.println("\nYou have won the entire game. Well done.");
-
+        System.out.println("1.");
+        System.out.println("2.Eagle Day");
+        if ((process % 100) % 10 == 0)
+            System.out.print(" (Not available now)");
+        System.out.println("3.Aftermath");
+        if (process % 100 < 10)
+            System.out.println(" (Not available now)");
+        System.out.println("select the task and enter its number");
+        int select = scan.nextInt();
+        if (select == 1)
+            task1(scan);
+        else if (select == 2) {
+            if ((process % 100) % 10 == 0)
+                System.out.println("Not able, finish task1 to make it available.");
+            else
+                task2(scan);
+        } else if (select == 3) {
+            if (process % 100 < 10)
+                System.out.println("Not able, finish task2 to make it available.");
+            else
+                task3(scan);
+        }
     }
 }
