@@ -1,8 +1,8 @@
 import java.util.*;
-public class RPG_Progect {
+public class RPG_Project {
     private static int process = 000;
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
 
         Scanner scan = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class RPG_Progect {
 
         System.out.println("1941, Europe.\n" +
                 "Nazi Germany invade most country in west europe. Now they aim their goal to British, \n" +
-                "but Royal airforce and Royal navy block them in east coast of atlantic ocean. \n" +
+                "but Royal air force and Royal navy block them in east coast of atlantic ocean. \n" +
                 "To invade British, Hitler make a plan: \n" +
                 "Operation Sea Lion");
         try {
