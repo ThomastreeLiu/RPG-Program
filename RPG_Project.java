@@ -2,7 +2,7 @@ import java.util.*;
 public class RPG_Project {
     private static int process = 000;
     private static int con = 1;
-
+    private static String anykey;
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (con == 1) {
@@ -13,24 +13,19 @@ public class RPG_Project {
 
 
     public static void task1(Scanner scan) {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println("1941, Europe.\n" +
                 "Nazi Germany invade most country in west europe. Now they aim their goal to British, \n" +
                 "but Royal air force and Royal navy block them in east coast of atlantic ocean. \n" +
                 "To invade British, Hitler make a plan: \n" +
                 "Operation Sea Lion");
-        try {
-            Thread.sleep(2500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Press any key");
-        String anykey = scan.nextLine();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
 
+        System.out.println("Press any key");
+        anykey = scan.next();
+
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println("You are a pilot of Supermarine Walrus, as usual, you take off from sea to " +
                 "scouting the german front coast");
         System.out.println("\n" +
@@ -67,14 +62,10 @@ public class RPG_Project {
                 "\n");
         //https://www.asciiart.eu/image-to-ascii
         System.out.println("Press any key");
-        anykey = scan.nextLine();
+        anykey = scan.next();
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
 
         System.out.println("you saw some black point in the sky of the coast.");
         System.out.println("                                                   X                            \n" +
@@ -103,9 +94,11 @@ public class RPG_Project {
                 "XX XX    XXX    X    XXXX                               XXXXXXXXXXX XX          \n" +
                 "    XXX    XXXX         XXXX                                         XXX        ");
         //https://www.asciiart.eu/ascii-draw-studio/app
-        System.out.println("Before this mission, your assistant told you British and Germany are in war, \n" +
+        System.out.println("\nBefore this mission, your assistant told you British and Germany are in war, \n" +
                 "but you look down upon. Now you treat this as a truth. You ask your copilot take a picture, \n" +
                 "");
+        System.out.println("Press any key");
+        anykey=scan.next();
 
 
         if ((process % 100) % 10 == 0)
@@ -139,7 +132,8 @@ public class RPG_Project {
     }
 
     public static void introduction(Scanner scan) {
-
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println(" ____        _   _   _              _                    \n" +
                 "| __ )  __ _| |_| |_| | ___    __ _| |__   _____   _____ \n" +
                 "|  _ \\ / _` | __| __| |/ _ \\  / _` | '_ \\ / _ \\ \\ / / _ \\\n" +
@@ -154,10 +148,10 @@ public class RPG_Project {
         System.out.println("1.");
         System.out.println("2.Eagle Day");
         if ((process % 100) % 10 == 0)
-            System.out.print(" (Not available now)");
+            System.out.println(" (Not available now)\n");
         System.out.println("3.Aftermath");
         if (process % 100 < 10)
-            System.out.println(" (Not available now)");
+            System.out.println(" (Not available now)\n");
         System.out.println("\n\n5.Save the game"+"   6.Enter the game code"+"   7.Test mode(all task will be available)" +
                 "\n8.Exit the game");
         System.out.println("select the task and enter its number");
@@ -166,20 +160,28 @@ public class RPG_Project {
         if (select == 1)
             task1(scan);
         else if (select == 2) {
-            if ((process % 100) % 10 == 0)
+            if ((process % 100) % 10 == 0) {
                 System.out.println("Not able, finish task1 to make it available.");
+                System.out.println("Press any key");
+                anykey = scan.next();
+            }
             else
                 task2(scan);
         }
         else if (select == 3) {
-            if (process % 100 < 10)
+            if (process % 100 < 10) {
                 System.out.println("Not able, finish task2 to make it available.");
+                System.out.println("Press any key");
+                anykey = scan.next();
+            }
             else
                 task3(scan);
 
         }
         else if (select == 5) {
             System.out.println("Your game code is "+process+", enter that in selection 6 to continue your game");
+            System.out.println("Press any key");
+            anykey=scan.next();
         }
         else if (select == 6) {
             System.out.println("Enter your game code");
