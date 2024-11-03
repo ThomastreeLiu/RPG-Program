@@ -1,6 +1,7 @@
 import java.util.*;
 public class RPG_Project {
-    private static int process = 000;
+    private static int process = 0;
+    private static int achievement = 0;
     private static int con = 1;
     private static String anykey;
     public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class RPG_Project {
 
     public static void task1(Scanner scan) {
         String quit = "n";
-        if ((process%100)%10==3){
+        if ((process%100)%10==6||(process%100)%10==8){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("You have done this task, you want to:\n" +
@@ -22,7 +23,7 @@ public class RPG_Project {
                     "2.quit\n"+"Make your choise in number.");
             int choise = scan.nextInt();
             if (choise==1)
-                process=process-3;
+                process=process-(process%100)%10;
             else
                 System.out.println("You will back to manu");
             try {
@@ -31,7 +32,7 @@ public class RPG_Project {
                 throw new RuntimeException(e);
             }
         }
-        else if ((process%100)%10==2||(process%100)%10==1) {
+        else if ((process%100)%10>0&&(process%100)%10<6||(process%100)%10==7) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("You are in the middle of the task, you want to:\n" +
@@ -43,8 +44,15 @@ public class RPG_Project {
             if (choise==1);
             else if (choise==2)
                 process=process-(process%100)%10;
-            else
-                quit="y";
+            else {
+                quit = "y";
+                System.out.println("You will back to manu.");
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
 
         while ((process%100)%10==0&&quit.equals("n")){
@@ -68,9 +76,7 @@ public class RPG_Project {
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("You are a pilot of Supermarine Walrus, as usual, you take off from sea to " +
                     "scouting the german front coast");
-            System.out.println("\n" +
-                    "\n" +
-                    "                 `··``´   `                                                                     ´`  \n" +
+            System.out.println("                 `··``´   `                                                                     ´`  \n" +
                     "                        `                                                                           \n" +
                     "                                                                                                    \n" +
                     "´ ` ``                                           `                                   `´´```  `    ``\n" +
@@ -98,8 +104,7 @@ public class RPG_Project {
                     "                           ´```   ```                                                               \n" +
                     "                                    ´´´`````````  ```  ¨¨´´´´´´`` ``` `````    `                    \n" +
                     "                                               ```     ´´·¨´       ```  ```                       ` \n" +
-                    "                                                        ```´´´¨`` ``   ` `     `                `` `\n" +
-                    "\n");
+                    "                                                        ```´´´¨`` ``   ` `     `                `` `\n" );
             //https://www.asciiart.eu/image-to-ascii
             System.out.println("Press any key");
             anykey = scan.next();
@@ -148,6 +153,173 @@ public class RPG_Project {
             else
                 process = process + 1;
         }
+        while ((process%100)%10==3&&quit.equals("n")){
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("The picture need time to show up, but you can already saw \n" +
+                    "Ju-87 Stuka\n" +
+                    " ------\n" +
+                    "| | # \\                                      |\n" +
+                    "| ____ \\_________|----^\"|\"\"\"\"\"|\"\\___________ |\n" +
+                    " \\___\\   FO + 94 >>    `\"\"\"\"\"\"\"\"     =====  \"|D\n" +
+                    "         ^^-------____--\"\"\"\"\"\"\"\"\"\"+\"\"--_  __--\"|\n" +
+                    "                     `\"\"|\"-->####)+---|`\"\"     |\n" +
+                    "                                      \\  \\\n" +
+                    "                                     <- O -)\n" +
+                    "                                       `\"'");
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("And BF-109 \n" +
+                    " !              ____         /`|`\\\n" +
+                    " ! _......_/|__|____\\..___../  |  |\n" +
+                    "<|~oooo    _____           c===-  |\n" +
+                    " !-...____/~~~~~\\_____...-___-.|._/\n" +
+                    " !        / |~~|__..=      o\n" +
+                    "         <  |\n" +
+                    "          (o)");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Now is time to do the decision, Your plane doesn't have any weapon.\n" +
+                    "You decide to:\n" +
+                    "1.Run! Run as fast as you can.\n" +
+                    "2.Try to decrease your elevation and fly close to sea surface.\n" +
+                    "3.Act like a Medieval Knight, fly close and say Hello to them\n" +
+                    "Make your decision by enter the number.");
+            int deci = scan.nextInt();
+            if (deci==1)
+                process=process+2;
+            else if (deci==2)
+                process=process+4;
+            else if (deci==3) {
+                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                System.out.println("You try to act like a medieval knight, but this is WWII.\n" +
+                        "You been shoot down by 20mm cannon, The shell broke your wing and your plane \n" +
+                        "crash into the sea. The investigation result of German are going to attack British \n" +
+                        "won't send to British anymore. ");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                if ((achievement%100)%10==0||(achievement%100)%10==2||(achievement%100)%10==4||(achievement%100)%10==6) {
+                    System.out.println("*\n" +
+                            "You get the Achievement: Knights of old");
+                    achievement = achievement + 1;
+                }
+                process=process+1;
+                System.out.println("You are going to quit this task, try another section to win this task \n" +
+                        "and be able to start the next one.");
+                System.out.println("Press any key to continue");
+                anykey = scan.next();
+            }
+            else
+                System.out.println("You will quit this task");
+        }
+        while ((process%100)%10==5&&quit.equals("n")){
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("You tell your assistant to turn the booster of engine on, the engine of supermarine \n" +
+                    "start to roar, these german pilot also find you, because the bule plane under the white \n" +
+                    "cloud is as conspicuous as a mole.");
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("They are coming for you.");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("░░░░░░░░░▒░░░░░░░░░░░░░░▒▒▒▒░▒▒▒░▒░░░▒░▒▒░▒░▒▒░▒▒░▒▒▒▒▒▒░▒░▒░░░░░░░░░▒░░░░░▒▒▒▒▒▒▒▒░░░▒▒▒░▒▒░▒░▒░░▒░\n" +
+                    "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                    "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                    "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                    "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                    "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                    "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█▓▓▓▒▓▓███▓▒▓▓▓▓▒▒▓▓▓▓▓▓▓░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                    "▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓░████▓▓█▓▒▓▒█▓▓▓▓▓▓▒▓▓▓▓▓▓█░░▒▓░░▓▒▒▓▒▓▒▓░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                    "▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▒░█▓█▓█████▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▒▒▒▒▓▒▓▒▒▒▓▒▒▒░░██▓▓▓░░░░░░░░░░░░░░░\n" +
+                    "▓▓▓▓▓▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓█▓█▓▒▒█▓▓▓▓▓▓▓▓▓▓▒▒▒▓▒▓▒▒▓▒▒▒▒▒███▒▒▓░░░░░░░░░░░░░░░\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓█▓▓▓▒█▒▒▒▒▓▓▓▓▓▓▓▓▓▒░▒▒▒▒▒▒▒▒█▓█▒▒▓▓▓░▒▒▓░░░░░░░░░░\n" +
+                    "▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▒▓▓▓▓▓▓▓▓▓▓█░░▒██▓▒▒▓▒▒▒▒▒░░░░▒░▒▒▒▒▒▓▒▒▒▒░▓██▓███████▒▒▒▒▒░▓▒░░░░░\n" +
+                    "▓▓▓▓▒▓▒▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▒▓▓▓▓▒░▓█▓▓▓▓█▓█▓▓▓██████▒▒█▓▓█████████████▓▓▒▒██▓▒▒▒░▒░░░▒▒▒▒▒▒\n" +
+                    "▓▓▒▓▒▒▒▓▓▒▓▓██▓▒▒▒▒▓▒▒▒▓░▓▓▓▓▒█▒░░▒▒▒▒▒▒██████▒▓▒▓███████▒▓█▓█▓█▓█▒▒▓▓▓▒▓█▒██▓▓█▓▒█▒▒░░░▒▒▒▒▒▒░░░░░░\n" +
+                    "▒▒▒▒▒▒▒▓▓▓▒███▓▒░▒▒▓░░░█▓░▒░▒▓▒▓█████████▓███▓▓▓▓▓▓█▓▓█▓▓█▒▓▓▓████████▓█▒▒▓▓▓▓█▒▓░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                    "▒▓▒▒▒▒▒░▒░▒▒██░░░░░▒▒░▒▒▓▓▓▒█▒▓██▓▓▒▓██▒█▓▓█▓▓▓█▓▓▓█▓█▓▓█▓▒▓▓▒█░░█░▓▓▓▓▓▓▒▓▓█▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                    "▓▓▓▓▓▓▓▓▒▓▓▒▓█▓▓█▒▓▓██████▓▓▓█▓▓▓▓▓██▓███▓█▓▓▓█▓▓▓▓▓▒▒▓▓▓▓▒▓▓▒▓▓██░▒▓▓▓▓▒▒▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                    "▓▒▒▓▓▒▓▓▓▓▓▓████▒███████▓█▓▓█▒▒▓▓▓▓▓▒▒███████▒███▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▓▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                    "▒▒▒▒▒▒▒▒▓▒█████▓▓▓█▓███▓▓▒█▒█▒▒░██▓█▒█▓█▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒░█▓▓██▒▓▓▒▒▒▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                    "▒▒▒▒▒▒▒▓▓▓█▓███████▓▓▓█▓▓▒▓██▓█▓▓▓██▓▓▓▓░████▓███▒█▓██▓▓█▓██▓▓█▓▓▓▓▓▓▓░▒▓▓▓▓▓▒▒▒▒▒▓▓▓▓▓▒▓▓▓██▓░▒▒▒▓▒\n" +
+                    "▓▒▓▓▒▒▓▓▓██▓▓▓▓█████▒░▒▒▒▒▒▒▓▓█▓▓▓▓▒█▓░██████████▒█▓▓▒▓▒▓▓▓▒▒▒▒▒▒▒▒▓▒▓▓▓▓▒▓▓▒▓▓▒▒▒▒▒▓▓▓▒▓▓▒▒▒▓▒▓▓▓▓▓\n" +
+                    "▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███████▒▒▒▒▓▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓█████▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▓▓▓▓▒▓▓▒▓▓▓▓▓▒▓▓▓▓▓▓\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▒▒▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                    "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                    "▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Fortunately your plane captain take care your plane from dead engine, you\n" +
+                    "break away from these planes. 30 min later, you send the message to royal airforce.");
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            if ((achievement%100)%10==0||(achievement%100)%10==1||(achievement%100)%10==4||(achievement%100)%10==5) {
+                System.out.println("*\n" +
+                        "You get the Achievement: Flee in a dilemma");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                achievement = achievement + 2;
+            }
+            System.out.println("Press any key to continue");
+            anykey = scan.next();
+            if (anykey.equals("q")||anykey.equals("Q"))
+                quit="y";
+            else
+                process = process + 1;
+        }
+        while ((process%100)%10==7&&quit.equals("n")){
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+            if ((achievement%100)%10==0||(achievement%100)%10==1||(achievement%100)%10==2||(achievement%100)%10==3) {
+                System.out.println("*\n" +
+                        "You get the Achievement: Live for fight another day");
+                achievement = achievement + 4;
+            }
+            System.out.println("Press any key to continue");
+            anykey = scan.next();
+            process=process+1;
+        }
     }
 
 
@@ -189,12 +361,12 @@ public class RPG_Project {
 
         System.out.println("1.");
         System.out.println("2.Eagle Day");
-        if (process % 100<3)
+        if (process%100%10<6||process%100%10==7)
             System.out.println(" (Not available now)\n");
         System.out.println("3.Aftermath");
         if (process % 100 < 10)
             System.out.println(" (Not available now)\n");
-        System.out.println("\n\n5.Save the game"+"   6.Enter the game code"+"   7.Test mode(all task will be available)" +
+        System.out.println("\n\n4. Save your achievement  "+"5.Save the game"+"   6.Enter the game code"+"   7.Test mode(all task will be available)" +
                 "\n8.Exit the game");
         System.out.println("select the task and enter its number\nRemember, in all any key step, press q or Q to quit " +
                 "the task and back to menu.");
@@ -203,8 +375,8 @@ public class RPG_Project {
         if (select == 1)
             task1(scan);
         else if (select == 2) {
-            if (process % 100<3){
-                System.out.println("Not able, finish task1 to make it available.");
+            if (process%100%10<6||process%100%10==7){
+                System.out.println("Not able, win task1 to make it available.");
                 System.out.println("Press any key");
                 anykey = scan.next();
             }
@@ -213,13 +385,18 @@ public class RPG_Project {
         }
         else if (select == 3) {
             if (process % 100 < 10) {
-                System.out.println("Not able, finish task2 to make it available.");
+                System.out.println("Not able, win task2 to make it available.");
                 System.out.println("Press any key");
                 anykey = scan.next();
             }
             else
                 task3(scan);
 
+        }
+        else if (select == 4) {
+            System.out.println("Your achieve code is "+achievement);
+            System.out.println("Press any key");
+            anykey=scan.next();
         }
         else if (select == 5) {
             System.out.println("Your game code is "+process+", enter that in selection 6 to continue your game");
