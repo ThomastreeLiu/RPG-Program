@@ -13,7 +13,7 @@ public class RPG_Project {
 
 
     public static void task1(Scanner scan) {
-        String quit = "y";
+        String quit = "n";
         if ((process%100)%10==3){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -31,7 +31,23 @@ public class RPG_Project {
                 throw new RuntimeException(e);
             }
         }
-        while ((process%100)%10==0&&quit.equals("y")){
+        else if ((process%100)%10==2||(process%100)%10==1) {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("You are in the middle of the task, you want to:\n" +
+                    "1.Continue your task\n" +
+                    "2.Restart your task(this will restart your game process of this task)\n" +
+                    "3.Quit this task\n" +
+                    "Make your choise in number.");
+            int choise = scan.nextInt();
+            if (choise==1);
+            else if (choise==2)
+                process=process-(process%100)%10;
+            else
+                quit="y";
+        }
+
+        while ((process%100)%10==0&&quit.equals("n")){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("1941, Europe.\n" +
@@ -43,11 +59,11 @@ public class RPG_Project {
             System.out.println("Press any key");
             anykey = scan.next();
             if (anykey.equals("q")||anykey.equals("Q"))
-                quit="n";
+                quit="y";
             else
                 process = process + 1;
         }
-        while ((process%100)%10==1&&quit.equals("y")) {
+        while ((process%100)%10==1&&quit.equals("n")) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("You are a pilot of Supermarine Walrus, as usual, you take off from sea to " +
@@ -88,12 +104,12 @@ public class RPG_Project {
             System.out.println("Press any key");
             anykey = scan.next();
             if (anykey.equals("q")||anykey.equals("Q"))
-                quit="n";
+                quit="y";
             else
                 process = process + 1;
         }
 
-        while ((process%100)%10==2&&quit.equals("y")) {
+        while ((process%100)%10==2&&quit.equals("n")) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("you saw some black point in the sky of the coast.");
@@ -128,7 +144,7 @@ public class RPG_Project {
             System.out.println("Press any key");
             anykey = scan.next();
             if (anykey.equals("q")||anykey.equals("Q"))
-                quit="n";
+                quit="y";
             else
                 process = process + 1;
         }
