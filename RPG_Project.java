@@ -366,7 +366,7 @@ public class RPG_Project {
         System.out.println("3.Aftermath");
         if (process % 100 < 10)
             System.out.println(" (Not available now)\n");
-        System.out.println("\n\n4. Save your achievement  "+"5.Save the game"+"   6.Enter the game code"+"   7.Test mode(all task will be available)" +
+        System.out.println("\n\n4. Save your achievement  "+"5.Save the game"+"   6.Restore the game"+"   7.Test mode(all task will be available)" +
                 "\n8.Exit the game");
         System.out.println("select the task and enter its number\nRemember, in all any key step, press q or Q to quit " +
                 "the task and back to menu.");
@@ -408,7 +408,7 @@ public class RPG_Project {
             process = scan.nextInt();
         }
         else if (select == 7) {
-            process = 111;
+            process = 117;
         }
         else if (select == 8) {
             con = 0;
