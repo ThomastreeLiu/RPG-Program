@@ -15,7 +15,7 @@ public class RPG_Project {
 
     public static void task1(Scanner scan) {
         String quit = "n";
-        if ((process%100)%10==6||(process%100)%10==8){
+        if ((process%100)%10==4||(process%100)%10==6||(process%100)%10==8){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("You have done this task, you want to:\n" +
@@ -231,7 +231,7 @@ public class RPG_Project {
                 throw new RuntimeException(e);
             }
             System.out.println("You tell your assistant to turn the booster of engine on, the engine of supermarine \n" +
-                    "start to roar, these german pilot also find you, because the bule plane under the white \n" +
+                    "start to roar, these german pilot also find you, because the blue plane under the white \n" +
                     "cloud is as conspicuous as a mole.");
             try {
                 Thread.sleep(2000);
@@ -310,6 +310,11 @@ public class RPG_Project {
         while ((process%100)%10==7&&quit.equals("n")){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("You told your plane captain slow down the engine and decrease the elevation.\n" +
+                    "Ultra low elevation is dangerous for plane but as a good pilot, you can hold it.\n" +
+                    "These hostile plane didn't saw you because blue plane is completely hide on the surface of \n" +
+                    "North Atlantic ocean. You successfully back to British island and send the scout report to \n" +
+                    "Royal airforce. They are now prepare for it.");
 
             if ((achievement%100)%10==0||(achievement%100)%10==1||(achievement%100)%10==2||(achievement%100)%10==3) {
                 System.out.println("*\n" +
