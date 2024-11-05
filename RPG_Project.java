@@ -404,16 +404,18 @@ public class RPG_Project {
             anykey=scan.next();
         }
         else if (select == 5) {
-            System.out.println("Your game code is "+process+", enter that in selection 6 to continue your game");
+            System.out.println("Your game code is "+(process+achievement*1000)+", enter that in selection 6 to continue your game");
             System.out.println("Press any key");
             anykey=scan.next();
         }
         else if (select == 6) {
             System.out.println("Enter your game code");
-            process = scan.nextInt();
+            int num = scan.nextInt();
+            process=num%1000;
+            achievement=(num-num%1000)/1000;
         }
         else if (select == 7) {
-            process = 117;
+            process = 7117;
         }
         else if (select == 8) {
             con = 0;
