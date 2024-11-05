@@ -4,6 +4,8 @@ public class RPG_Project {
     private static int achievement = 0;
     private static int con = 1;
     private static String anykey;
+    private static int timesa = 0;
+    private static int timesb = 0;
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (con == 1) {
@@ -242,12 +244,47 @@ public class RPG_Project {
 
 
     public static void task2(Scanner scan) {
-
-
-        System.out.println("\nThis is task two.");
-
-        if (process%100==3)
-            process=process+10;
+        String quit = "n";
+        int cprocess = process-process%10;
+        if (cprocess%100==40||cprocess%100==60||cprocess%100==80){
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("You have done this task, you want to:\n" +
+                    "1.Redo this task(the process of this task will be restart)\n" +
+                    "2.quit\n"+"Make your choise in number.");
+            int choise = scan.nextInt();
+            if (choise==1)
+                process=process-cprocess%100;
+            else
+                System.out.println("You will back to manu");
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        else if (cprocess%100>0&&cprocess%100<60||cprocess%100==70) {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("You are in the middle of the task, you want to:\n" +
+                    "1.Continue your task\n" +
+                    "2.Restart your task(this will restart your game process of this task)\n" +
+                    "3.Quit this task\n" +
+                    "Make your choise in number.");
+            int choise = scan.nextInt();
+            if (choise==1);
+            else if (choise==2)
+                process=process-cprocess%100;
+            else {
+                quit = "y";
+                System.out.println("You will back to manu.");
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 
 
@@ -293,23 +330,26 @@ public class RPG_Project {
         if (select == 1)
             task1(scan);
         else if (select == 2) {
-            if (process%100%10<6||process%100%10==7){
+            if (process%100%10<6&&timesa==0||process%100%10==7&&timesa==0){
                 System.out.println("Not able, win task1 to make it available.");
                 System.out.println("Press any key");
                 anykey = scan.next();
             }
-            else
+            else {
+                timesa=1;
                 task2(scan);
+            }
         }
         else if (select == 3) {
-            if (process % 100 < 10) {
+            if (process%100<69&&timesb==0||process%100==77&&timesa==0) {
                 System.out.println("Not able, win task2 to make it available.");
                 System.out.println("Press any key");
                 anykey = scan.next();
             }
-            else
+            else {
+                timesb = 1;
                 task3(scan);
-
+            }
         }
         else if (select == 4) {
             System.out.println("Your achieve code is "+achievement);
