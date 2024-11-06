@@ -200,6 +200,7 @@ public class RPG_Project {
             }
             System.out.println("Fortunately your plane captain take care your plane from dead engine, you\n" +
                     "break away from these planes. 30 min later, you send the message to royal airforce.");
+            task1finish(scan);
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -230,6 +231,7 @@ public class RPG_Project {
                     "These hostile plane didn't saw you because blue plane is completely hide on the surface of \n" +
                     "North Atlantic ocean. You successfully back to British island and send the scout report to \n" +
                     "Royal airforce. They are now prepare for it.");
+            task1finish(scan);
 
             if ((achievement%100)%10==0||(achievement%100)%10==1||(achievement%100)%10==2||(achievement%100)%10==3) {
                 System.out.println("*\n" +
@@ -246,7 +248,7 @@ public class RPG_Project {
     public static void task2(Scanner scan) {
         String quit = "n";
         int cprocess = process-process%10;
-        if (cprocess%100==40||cprocess%100==60||cprocess%100==80){
+        if (cprocess%100==70||cprocess%100==90){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("You have done this task, you want to:\n" +
@@ -263,7 +265,7 @@ public class RPG_Project {
                 throw new RuntimeException(e);
             }
         }
-        else if (cprocess%100>0&&cprocess%100<60||cprocess%100==70) {
+        else if (cprocess%100>0&&cprocess%100<70||cprocess%100==80) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("You are in the middle of the task, you want to:\n" +
@@ -283,6 +285,41 @@ public class RPG_Project {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
+            }
+        }
+        while (process%100>0&&process%100<10&&quit.equals("n")){
+            System.out.println("August 13, 1940");
+            System.out.println("5:00 A.M");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("First attack");
+            System.out.println("Choose your character");
+            System.out.println("1.British fighter pilot\n2.Germany bomber\n3.Commander of British airfield defend.");
+            int choose = scan.nextInt();
+            if (choose==1)
+                process=process+10;
+            else if (choose==2)
+                process=process+30;
+            else if (choose==3)
+                process=process+50;
+            else {
+                System.out.println("You are back to menu");
+                quit="y";
+            }
+        }
+        while (process%100>9&&process%100<20&&quit.equals("n")){
+            System.out.println("Your goal is to shoot down planes, shoot sown 3 planes and make sure no base been\n" +
+                    "bombed will win this task.");
+            System.out.println("Remember, the velocity of cannon bullets are slow compare to the speed of \n" +
+                    "plane and its distance, so make sure you aim the path of enemy aircraft to be passed \n" +
+                    "instead aircraft itselves. ");
+            System.out.println("press any key to continue.");
+            anykey=scan.next();
+            for (int bullet = 480;bullet>0;){
+
             }
         }
     }
@@ -315,11 +352,15 @@ public class RPG_Project {
                 "\n");
 
         System.out.println("1.");
+        if (process%100%10==6||process%100%10==8)
+            timesa=1;
         System.out.println("2.Eagle Day");
-        if (process%100%10<6||process%100%10==7)
+        if (timesa==0)
             System.out.println(" (Not available now)\n");
         System.out.println("3.Aftermath");
-        if (process % 100 < 10)
+        if (process%100>59&&process<70||process>79&&process<90)
+            timesb=1;
+        if (timesb==0)
             System.out.println(" (Not available now)\n");
         System.out.println("\n\n4. Show the achieve  "+"5.Save the game"+"   6.Restore the game"+"   7.Test mode(all task will be available)" +
                 "\n8.Exit the game");
@@ -330,18 +371,17 @@ public class RPG_Project {
         if (select == 1)
             task1(scan);
         else if (select == 2) {
-            if (process%100%10<6&&timesa==0||process%100%10==7&&timesa==0){
+            if (timesa==0){
                 System.out.println("Not able, win task1 to make it available.");
                 System.out.println("Press any key");
                 anykey = scan.next();
             }
             else {
-                timesa=1;
                 task2(scan);
             }
         }
         else if (select == 3) {
-            if (process%100<69&&timesb==0||process%100==77&&timesa==0) {
+            if (timesb==0) {
                 System.out.println("Not able, win task2 to make it available.");
                 System.out.println("Press any key");
                 anykey = scan.next();
@@ -470,5 +510,28 @@ public class RPG_Project {
                 "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
                 "▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         //https://www.asciiart.eu/image-to-ascii
+    }
+    public static void task1finish(Scanner scan){
+        System.out.println("\n" +
+                "\n" +
+                " _____         _      _   _____ _       _     _     \n" +
+                "|_   _|_ _ ___| | __ / | |  ___(_)_ __ (_)___| |__  \n" +
+                "  | |/ _` / __| |/ / | | | |_  | | '_ \\| / __| '_ \\ \n" +
+                "  | | (_| \\__ \\   <  | | |  _| | | | | | \\__ \\ | | |\n" +
+                "  |_|\\__,_|___/_|\\_\\ |_| |_|   |_|_| |_|_|___/_| |_|\n" +
+                "\n");
+        //https://www.asciiart.eu/text-to-ascii-art
+    }
+    public static void fight1(Scanner scan){
+
+    }
+    public static void fight2(Scanner scan){
+
+    }
+    public static void fight3(Scanner scan){
+
+    }
+    public static void fight4(Scanner scan){
+
     }
 }
