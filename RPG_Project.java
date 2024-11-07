@@ -351,7 +351,7 @@ public class RPG_Project {
                 "|____/|_|  |_|\\__|_|___/_| |_|                           \n" +
                 "\n");
 
-        System.out.println("1.");
+        System.out.println("1.Nightfall");
         if (process%100%10==6||process%100%10==8)
             timesa=1;
         System.out.println("2.Eagle Day");
@@ -521,6 +521,9 @@ public class RPG_Project {
                 "  |_|\\__,_|___/_|\\_\\ |_| |_|   |_|_| |_|_|___/_| |_|\n" +
                 "\n");
         //https://www.asciiart.eu/text-to-ascii-art
+    }
+    public static void testflight(Scanner scan){
+        System.out.println();
     }
     public static void fight1(Scanner scan){
 
