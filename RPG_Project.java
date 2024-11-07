@@ -6,6 +6,7 @@ public class RPG_Project {
     private static String anykey;
     private static int timesa = 0;
     private static int timesb = 0;
+    private static int plane = 0;
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (con == 1) {
@@ -523,7 +524,108 @@ public class RPG_Project {
         //https://www.asciiart.eu/text-to-ascii-art
     }
     public static void testflight(Scanner scan){
-        System.out.println();
+        System.out.println("                          XXX                         XXXXXXXX    Ammo:480      \n" +
+                "                      XXXXX  XXXXXXXXXXXXXXXXXXXXXXXXX       XXX                \n" +
+                "                  XXXXX      X                       X         XX               \n" +
+                "          XXXXXXXXX          X                       X           XXX            \n" +
+                "      XXXX                   X                       X             XXXXXXXX     \n" +
+                "    XXX                      X                       X                    XXX   \n" +
+                "    X                        X                       X                      XXX \n" +
+                "   XX                        X XXXXXXXXXXXXXXXXXXXXX X                        X \n" +
+                "  XX                         X X        XX         X X                        X \n" +
+                " XX                          X X        XX         X X                        X \n" +
+                "XX                           X X      XXXXXX       X X                        XX\n" +
+                "X                            X XXXXX X      X XXXXXX X                         X\n" +
+                "                             X XXXXX X     X  XXXXXX X                          \n" +
+                "                             X X       X  X        X X                          \n" +
+                "                             X X        XX         X X                          \n" +
+                "                             X X        XX         X X                          \n" +
+                "                             X XXXXXXXXXXXXXXXXXXXXX X                          \n" +
+                "                             XXX                   XXXX                         \n" +
+                "                          XXXX                        XXX                       \n" +
+                "                        XXX                             XXXX                    \n" +
+                "                     XXXX                                  XXXX                 \n" +
+                "                  XXXX                                         XXX              \n" +
+                "                XXX                                              XXX            \n" +
+                "              XXX                                                  XXXX         ");
+        System.out.println("This is your cabin, on the middle there is a sight ring. On the right top \n" +
+                "there is your ammo. You got 480 bullet for auto cannon, but don't waste it, it's not a \n" +
+                "large number for four cannon.");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Remember, the velocity of cannon bullets are slow compare to the speed of \n" +
+                "plane and its distance, so make sure you aim the path of enemy aircraft to be passed \n" +
+                "instead aircraft itselves. ");
+        System.out.println("               XXXXXXXXXXXXX               \n" +
+                "          XXXXX      X      XXXXX          \n" +
+                "        XX           X           XX        \n" +
+                "      XX             X             XX      \n" +
+                "    XX               X     XX        XX    \n" +
+                "   X                 X      XXX        X   \n" +
+                "  X                  X    XXXXXX        X  \n" +
+                " X             XX    X  XXXXXXXXX        X \n" +
+                "X               XX   X XXXXXX   X         X\n" +
+                "X                XX XXXXXXX               X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X              XX XXXX                    X\n" +
+                "X             XX XXXXX                    X\n" +
+                " X           XXXXX   XX                  X \n" +
+                "  X          XXX     XXXX               X  \n" +
+                "   X                 X XXX             X   \n" +
+                "    XX               X   X           XX    \n" +
+                "      XX             X             XX      \n" +
+                "        XX           X           XX        \n" +
+                "          XXXXX      X      XXXXX          \n" +
+                "               XXXXXXXXXXXXX               ");
+        System.out.println("This is not correct, do not aim the plane directly, that's wasting ammo.\nPress any key to continue");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        anykey=scan.next();
+        System.out.println("Now is the correct example.");
+        System.out.println("                                             XX       \n" +
+                "               XXXXXXXXXXXXX       XXXX       XX X    \n" +
+                "          XXXXX      X      XXXXX     XX     XXXXXX   \n" +
+                "        XX           X           XX    XX   XXXXX XXX \n" +
+                "      XX             X             XX    XXXXXX      X\n" +
+                "    XX               X               XXXXXXXX         \n" +
+                "   X                 X                 XXX  XX        \n" +
+                "  X                  X                  X    XXX      \n" +
+                " X                   X                   X     XX     \n" +
+                "X                    X                    X     X     \n" +
+                "X                    X                    X           \n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           \n" +
+                "X                    X                    X           \n" +
+                "X                    X                    X           \n" +
+                " X                   X                   X            \n" +
+                "  X                  X                  X             \n" +
+                "   X                 X                 X              \n" +
+                "    XX               X               XX               \n" +
+                "      XX             X             XX                 \n" +
+                "        XX           X           XX                   \n" +
+                "          XXXXX      X      XXXXX                     \n" +
+                "               XXXXXXXXXXXXX                          ");
+        System.out.println("Aim the path plane is going to pass, the distance you need to choose depends on \n" +
+                "You distance, your speed and your gun. Normally you can just follow your hunch to shoot.");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("1.Start the task\n2.Redo the training");
+        int choise = scan.nextInt();
+        if (choise==1)
+            fight1(scan);
+        else if (choise==2)
+            testflight(scan);
+        else
+            System.out.println("You will back to menu");
+        introduction(scan);
     }
     public static void fight1(Scanner scan){
 
