@@ -524,6 +524,9 @@ public class RPG_Project {
         //https://www.asciiart.eu/text-to-ascii-art
     }
     public static void testflight(Scanner scan){
+        double planea=100;
+        double planeb=100;
+        int ammo = 480;
         System.out.println("                          XXX                         XXXXXXXX    Ammo:480      \n" +
                 "                      XXXXX  XXXXXXXXXXXXXXXXXXXXXXXXX       XXX                \n" +
                 "                  XXXXX      X                       X         XX               \n" +
@@ -580,15 +583,36 @@ public class RPG_Project {
                 "        XX           X           XX        \n" +
                 "          XXXXX      X      XXXXX          \n" +
                 "               XXXXXXXXXXXXX               ");
-        System.out.println("This is not correct, do not aim the plane directly, that's wasting ammo.\nPress any key to continue");
+        System.out.println("This is not correct, do not aim the plane directly, that's wasting ammo.");
+        System.out.println("XXXX              XXXX\n" +
+                "XXXXX            XXXXX\n" +
+                "XXXXXX          XXXXXX\n" +
+                " XXXXXX        XXXXXX \n" +
+                "  XXXXXX      XXXXXX  \n" +
+                "   XXXXXX    XXXXXX   \n" +
+                "    XXXXXX  XXXXXX    \n" +
+                "     XXXXXXXXXXXX     \n" +
+                "      XXXXXXXXXX      \n" +
+                "       XXXXXXXX       \n" +
+                "        XXXXXX        \n" +
+                "       XXXXXXXX       \n" +
+                "      XXXXXXXXXX      \n" +
+                "     XXXXXXXXXXXX     \n" +
+                "    XXXXXX  XXXXXX    \n" +
+                "   XXXXXX    XXXXXX   \n" +
+                "  XXXXXX      XXXXXX  \n" +
+                " XXXXXX        XXXXXX \n" +
+                "XXXXXX          XXXXXX\n" +
+                "XXXXX            XXXXX");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        System.out.println("Enter any key");
         anykey=scan.next();
         System.out.println("Now is the correct example.");
-        System.out.println("                                             XX       \n" +
+        System.out.println("                                             XX           Ammo=480\n" +
                 "               XXXXXXXXXXXXX       XXXX       XX X    \n" +
                 "          XXXXX      X      XXXXX     XX     XXXXXX   \n" +
                 "        XX           X           XX    XX   XXXXX XXX \n" +
@@ -617,18 +641,64 @@ public class RPG_Project {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("1.Start the task\n2.Redo the training");
+        System.out.println("1.Start the task\n2.Redo the training\nOther number to return the menu");
         int choise = scan.nextInt();
         if (choise==1)
             fight1(scan);
         else if (choise==2)
             testflight(scan);
-        else
+        else {
             System.out.println("You will back to menu");
-        introduction(scan);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            introduction(scan);
+        }
+        System.out.println("Choose your shooting window.");
+        anykey=scan.next();
+        if (anykey.equals("2")){
+            System.out.println("You hit him!");
+            planea=planea-Math.random()*20-50;
+        }
+        else
+            System.out.println("You missed");
+        ammo=ammo-120;
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Enemy shoot");
+        if (Math.random()>0.5) {
+            System.out.println("Enemy hit!");
+            planeb = planeb - Math.random() * 20 - 50;
+        }
+        else
+            System.out.println("Enemy missed");
+        System.out.println("Your hp is "+planeb+"\nYour enemy's hp is "+planea);
+        System.out.println("Press any key to continue");
+
+
     }
     public static void fight1(Scanner scan){
-
+        System.out.println("                                XXX        XX    ammo=480\n" +
+                "                                XX X    XXXXXXX  \n" +
+                "                                 XX X XXXXXXX XXX\n" +
+                "                                  XXXXXXX       X\n" +
+                "                                 XXXXX X         \n" +
+                "                            X   XX   XX          \n" +
+                "                            X         XXXX       \n" +
+                "    XXXXXXX         XXX     X           XX       \n" +
+                "  XX       XX         X     X            XX      \n" +
+                " X       XXX X      XXX     X                    \n" +
+                "X          X  X     X                            \n" +
+                "X      X XXX  X     XXX                          \n" +
+                "X          X  X                                  \n" +
+                " X       XXX X                                   \n" +
+                "  XX       XX                                    \n" +
+                "    XXXXXXX                                      ");
     }
     public static void fight2(Scanner scan){
 
