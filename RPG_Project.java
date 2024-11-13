@@ -854,6 +854,7 @@ public class RPG_Project {
                 " X       XXX X                                   \n" +
                 "  XX       XX                                    \n" +
                 "    XXXXXXX                                      ");
+        //https://www.asciiart.eu/image-to-ascii
     }
     public static void fight2(Scanner scan){
         System.out.println("                                         XXXXXXX   ammo:360 \n" +
@@ -874,6 +875,7 @@ public class RPG_Project {
                 " XXXXX                                              \n" +
                 "  X  XX                                             \n" +
                 "      XX                                            ");
+        //https://www.asciiart.eu/image-to-ascii
     }
     public static void fight3(Scanner scan){
         System.out.println("    X                                             ammo:240     \n" +
@@ -896,6 +898,7 @@ public class RPG_Project {
                 "                                         X           X \n" +
                 "                                          XX       XX  \n" +
                 "                                            XXXXXXX    ");
+        //https://www.asciiart.eu/image-to-ascii
     }
     public static void fight4(Scanner scan){
         System.out.println("XXX                  XXXX               ammo:120   \n" +
@@ -918,5 +921,6 @@ public class RPG_Project {
                 "                       X          X   X   X\n" +
                 "                       XXXXXX      X     X \n" +
                 "                                    XXXXX  ");
+        //https://www.asciiart.eu/image-to-ascii
     }
 }
