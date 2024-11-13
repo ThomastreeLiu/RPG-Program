@@ -359,7 +359,7 @@ public class RPG_Project {
         if (timesa==0)
             System.out.println(" (Not available now)\n");
         System.out.println("3.Aftermath");
-        if (process%100>59&&process<70||process>79&&process<90)
+        if (process%100>9&&process<50)
             timesb=1;
         if (timesb==0)
             System.out.println(" (Not available now)\n");
@@ -378,7 +378,7 @@ public class RPG_Project {
                 anykey = scan.next();
             }
             else {
-                task2(scan);
+                testflight(scan);
             }
         }
         else if (select == 3) {
@@ -524,9 +524,9 @@ public class RPG_Project {
         //https://www.asciiart.eu/text-to-ascii-art
     }
     public static void testflight(Scanner scan){
+        process=process-(process-process%10)%100;
         double planea=100;
         double planeb=100;
-        int ammo = 480;
         System.out.println("                          XXX                         XXXXXXXX    Ammo:480      \n" +
                 "                      XXXXX  XXXXXXXXXXXXXXXXXXXXXXXXX       XXX                \n" +
                 "                  XXXXX      X                       X         XX               \n" +
@@ -634,7 +634,7 @@ public class RPG_Project {
                 "        XX           X           XX                   \n" +
                 "          XXXXX      X      XXXXX                     \n" +
                 "               XXXXXXXXXXXXX                          ");
-        System.out.println("Aim the path plane is going to pass, the distance you need to choose depends on \n" +
+        System.out.println("Aim the path plane is going to pass, the deflection you need to choose depends on \n" +
                 "You distance, your speed and your gun. Normally you can just follow your hunch to shoot.");
         try {
             Thread.sleep(3000);
@@ -658,13 +658,12 @@ public class RPG_Project {
         }
         System.out.println("Choose your shooting window.");
         anykey=scan.next();
-        if (anykey.equals("2")){
+        if (anykey.equals("1")){
             System.out.println("You hit him!");
-            planea=planea-Math.random()*20-50;
+            planea=planea-Math.random()*70-50;
         }
         else
             System.out.println("You missed");
-        ammo=ammo-120;
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -673,12 +672,168 @@ public class RPG_Project {
         System.out.println("Enemy shoot");
         if (Math.random()>0.5) {
             System.out.println("Enemy hit!");
-            planeb = planeb - Math.random() * 20 - 50;
+            planeb = planeb - Math.random() * 70 - 50;
         }
         else
             System.out.println("Enemy missed");
         System.out.println("Your hp is "+planeb+"\nYour enemy's hp is "+planea);
+        if (planeb<0) {
+            process = process + 50;
+            System.out.println("You been shoot down. Try this task again.");
+            if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==1||
+                    (achievement-achievement%10)%100==4||(achievement-achievement%10)%100==5) {
+                achievement = achievement + 2;
+                System.out.println("You got the achievement:Jinx");
+                System.out.println("Press any key to continue");
+                anykey=scan.next();
+            }
+            introduction(scan);
+        }
+        else if (planea<0) {
+            process=process+10;
+            System.out.println("You shoot down enemy plane. ");
+            if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==2||
+                    (achievement-achievement%10)%100==4||(achievement-achievement%10)%100==6) {
+                achievement = achievement + 1;
+                System.out.println("You got the achievement:Airborne Sniper");
+                System.out.println("Press any key to continue");
+                anykey=scan.next();
+            }
+            introduction(scan);
+        }
         System.out.println("Press any key to continue");
+        anykey=scan.next();
+        fight2(scan);
+
+
+        System.out.println("Choose your shooting window.");
+        anykey=scan.next();
+        if (anykey.equals("3")){
+            System.out.println("You hit him!");
+            planea=planea-Math.random()*70-50;
+        }
+        else {
+            System.out.println("You missed");
+            System.out.println("Remember, the deflection you choose need to increase by the distance of your and enemy.");
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Enemy shoot");
+        if (Math.random()>0.5) {
+            System.out.println("Enemy hit!");
+            planeb = planeb - Math.random() * 70 - 50;
+        }
+        else
+            System.out.println("Enemy missed");
+        System.out.println("Your hp is "+planeb+"\nYour enemy's hp is "+planea);
+        if (planeb<0) {
+            process = process + 50;
+            System.out.println("You been shoot down. Try this task again.");
+            System.out.println("Press any key");
+            anykey=scan.next();
+            introduction(scan);
+        }
+        else if (planea<0) {
+            System.out.println("You win this time, average royal airforce pilot.");
+            process=process+20;
+            System.out.println("Press any key to continue");
+            anykey=scan.next();
+            introduction(scan);
+        }
+        System.out.println("Press any key to continue");
+        anykey=scan.next();
+
+        fight3(scan);
+        System.out.println("Choose your shooting window.");
+        anykey=scan.next();
+        if (anykey.equals("2")){
+            System.out.println("You hit him!");
+            planea=planea-Math.random()*70-50;
+        }
+        else {
+            System.out.println("You missed");
+            System.out.println("Remember, the deflection you choose need to increase by the distance of your and enemy.");
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Enemy shoot");
+        if (Math.random()>0.5) {
+            System.out.println("Enemy hit!");
+            planeb = planeb - Math.random() * 70 - 50;
+        }
+        else
+            System.out.println("Enemy missed");
+        System.out.println("Your hp is "+planeb+"\nYour enemy's hp is "+planea);
+        if (planeb<0) {
+            process = process + 50;
+            System.out.println("You been shoot down. Try this task again.");
+            System.out.println("Press any key");
+            anykey=scan.next();
+            introduction(scan);
+        }
+        else if (planea<0) {
+            System.out.println("You win this time, average royal airforce pilot.");
+            process=process+30;
+            System.out.println("Press any key to continue");
+            anykey=scan.next();
+            introduction(scan);
+        }
+        System.out.println("Press any key to continue");
+        anykey=scan.next();
+
+        fight4(scan);
+        System.out.println("Choose your shooting window.");
+        anykey=scan.next();
+        if (anykey.equals("1")){
+            System.out.println("You hit him!");
+            planea=planea-Math.random()*70-50;
+        }
+        else {
+            System.out.println("You missed");
+            System.out.println("Remember, the deflection you choose need to increase by the distance of your and enemy.");
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Enemy shoot");
+        if (Math.random()>0.5) {
+            System.out.println("Enemy hit!");
+            planeb = planeb - Math.random() * 70 - 50;
+        }
+        else
+            System.out.println("Enemy missed");
+        System.out.println("Your hp is "+planeb+"\nYour enemy's hp is "+planea);
+        if (planeb<0) {
+            process = process + 50;
+            System.out.println("You been shoot down. Try this task again.");
+            System.out.println("Press any key");
+            anykey=scan.next();
+            introduction(scan);
+        }
+        else if (planea<0) {
+            System.out.println("You win this time, average royal airforce pilot.");
+            process=process+40;
+            System.out.println("Press any key to continue");
+            anykey=scan.next();
+            introduction(scan);
+        }
+        System.out.println("You are out of ammo, mission failed.");
+        if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==1||
+                (achievement-achievement%10)%100==2||(achievement-achievement%10)%100==3) {
+            achievement = achievement + 4;
+            System.out.println("You got the achievement:Cadet");
+        }
+        System.out.println("Press any key to continue");
+        anykey=scan.next();
+        introduction(scan);
 
 
     }
@@ -701,12 +856,67 @@ public class RPG_Project {
                 "    XXXXXXX                                      ");
     }
     public static void fight2(Scanner scan){
-
+        System.out.println("                                         XXXXXXX   ammo:360 \n" +
+                "                                       XX       XX  \n" +
+                "                                      X           X \n" +
+                "                                     X      X      X\n" +
+                "                       XXXX          X     XXX     X\n" +
+                "                          X          X      X      X\n" +
+                "                       XXXX           X           X \n" +
+                "                XXXX      X            XX       XX  \n" +
+                "                   X   XXXX              XXXXXXX    \n" +
+                "                XXXX                                \n" +
+                "           X    X                                   \n" +
+                "           X    XXXX                                \n" +
+                " XX        X                                        \n" +
+                "  XX  XX   X                                        \n" +
+                "X  XXXX    X                                        \n" +
+                " XXXXX                                              \n" +
+                "  X  XX                                             \n" +
+                "      XX                                            ");
     }
     public static void fight3(Scanner scan){
-
+        System.out.println("    X                                             ammo:240     \n" +
+                " XXX                                                   \n" +
+                " XXXXX         XXX                                     \n" +
+                "XX XXXXX    XXXXX                                      \n" +
+                "     XXXXXXXXXX                                        \n" +
+                "        XXXXXX     X                                   \n" +
+                "       XXXXX XXX   X                                   \n" +
+                "     XXXXX         X     XXXX                          \n" +
+                "     XXX           X        X                          \n" +
+                "                   X     XXXX                          \n" +
+                "                         X       XXX                   \n" +
+                "                         XXXX      X        XXXXXXX    \n" +
+                "                                 XXX      XX       XX  \n" +
+                "                                   X     X           X \n" +
+                "                                 XXX    X      X      X\n" +
+                "                                        X     XXX     X\n" +
+                "                                        X      X      X\n" +
+                "                                         X           X \n" +
+                "                                          XX       XX  \n" +
+                "                                            XXXXXXX    ");
     }
     public static void fight4(Scanner scan){
-
+        System.out.println("XXX                  XXXX               ammo:120   \n" +
+                " XXXX               XXXX                   \n" +
+                "  XXXX           XXXXX                     \n" +
+                "   XXXX         XXXX                       \n" +
+                "    XXXXX     XXXXX                        \n" +
+                "      XXXXX  XXXX                          \n" +
+                "       XXXXXXXXX                           \n" +
+                "        XXXXXX                             \n" +
+                "        XXXXXXX                            \n" +
+                "      XXXXX  XX                            \n" +
+                "    XXXXXX         X                       \n" +
+                "  XXXXXX           X                       \n" +
+                " XXXXX             X                       \n" +
+                "XXX                X                       \n" +
+                "XX                 X   XXXXXX              \n" +
+                "                            X       XXXXX  \n" +
+                "                       XXXXXX      X     X \n" +
+                "                       X          X   X   X\n" +
+                "                       XXXXXX      X     X \n" +
+                "                                    XXXXX  ");
     }
 }
