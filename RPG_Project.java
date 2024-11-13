@@ -392,9 +392,7 @@ public class RPG_Project {
             }
         }
         else if (select == 4) {
-            System.out.println("Your achieve code is "+achievement);
-            System.out.println("Press any key");
-            anykey=scan.next();
+            Achievement(scan);
         }
         else if (select == 5) {
             System.out.println("Your game code is "+(process+achievement*1000)+", enter that in selection 6 to continue your game");
@@ -523,6 +521,8 @@ public class RPG_Project {
         //https://www.asciiart.eu/text-to-ascii-art
     }
     public static void testflight(Scanner scan){
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         process=process-(process-process%10)%100;
         double planea=100;
         double planeb=100;
@@ -642,8 +642,11 @@ public class RPG_Project {
         }
         System.out.println("1.Start the task\n2.Redo the training\nOther number to return the menu");
         int choise = scan.nextInt();
-        if (choise==1)
+        if (choise==1) {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             fight1(scan);
+        }
         else if (choise==2)
             testflight(scan);
         else {
@@ -681,7 +684,7 @@ public class RPG_Project {
             System.out.println("You been shoot down. Try this task again.");
             if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==1||
                     (achievement-achievement%10)%100==4||(achievement-achievement%10)%100==5) {
-                achievement = achievement + 2;
+                achievement = achievement + 20;
                 System.out.println("You got the achievement:Jinx");
                 System.out.println("Press any key to continue");
                 anykey=scan.next();
@@ -693,7 +696,7 @@ public class RPG_Project {
             System.out.println("You shoot down enemy plane. ");
             if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==2||
                     (achievement-achievement%10)%100==4||(achievement-achievement%10)%100==6) {
-                achievement = achievement + 1;
+                achievement = achievement + 10;
                 System.out.println("You got the achievement:Airborne Sniper");
                 System.out.println("Press any key to continue");
                 anykey=scan.next();
@@ -702,6 +705,8 @@ public class RPG_Project {
         }
         System.out.println("Press any key to continue");
         anykey=scan.next();
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         fight2(scan);
 
 
@@ -744,6 +749,8 @@ public class RPG_Project {
         }
         System.out.println("Press any key to continue");
         anykey=scan.next();
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
         fight3(scan);
         System.out.println("Choose your shooting window.");
@@ -827,7 +834,7 @@ public class RPG_Project {
         System.out.println("You are out of ammo, mission failed.");
         if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==1||
                 (achievement-achievement%10)%100==2||(achievement-achievement%10)%100==3) {
-            achievement = achievement + 4;
+            achievement = achievement + 40;
             System.out.println("You got the achievement:Cadet");
         }
         System.out.println("Press any key to continue");
@@ -921,5 +928,35 @@ public class RPG_Project {
                 "                       XXXXXX      X     X \n" +
                 "                                    XXXXX  ");
         //https://www.asciiart.eu/image-to-ascii
+    }
+    public static void Achievement(Scanner scan){
+        int num = 0;
+        if (achievement-achievement%100==100||achievement-achievement%100==200||achievement-achievement%100==400)
+            num=1;
+        else if (achievement-achievement%100==300||achievement-achievement%100==500||achievement-achievement%100==600)
+            num=2;
+        else if (achievement-achievement%100==700)
+            num=3;
+        if (achievement%100-achievement%10==10||achievement%100-achievement%10==20||achievement%100-achievement%10==40)
+            num=num+1;
+        else if (achievement%100-achievement%10==30||achievement%100-achievement%10==50||achievement%100-achievement%10==60)
+            num=num+2;
+        else if (achievement%100-achievement%10==70)
+            num=num+3;
+        if (achievement%10==1||achievement%10==2||achievement%10==4)
+            num=num+1;
+        else if (achievement%10==3||achievement%10==5||achievement%10==6)
+            num=num+2;
+        else if (achievement%10==7)
+            num=num+3;
+
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("Achievement("+num+"/9)");
+        System.out.println("Show detail by enter the number.");
+        System.out.println("press q for quit");
+        String choise=scan.next();
+        if (choise.equals("q")||choise.equals("q"))
+            introduction(scan);
     }
 }
