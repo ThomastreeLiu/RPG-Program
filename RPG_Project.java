@@ -6,7 +6,6 @@ public class RPG_Project {
     private static String anykey;
     private static int timesa = 0;
     private static int timesb = 0;
-    private static int plane = 0;
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (con == 1) {
