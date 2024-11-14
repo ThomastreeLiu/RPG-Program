@@ -272,7 +272,6 @@ public class RPG_Project {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            introduction(scan);
         }
         else {
             task2con=1;
@@ -331,7 +330,6 @@ public class RPG_Project {
                 System.out.println("Not able, win task1 to make it available.");
                 System.out.println("Press any key");
                 anykey = scan.next();
-                introduction(scan);
             }
             else {
                 task2(scan);
@@ -342,7 +340,6 @@ public class RPG_Project {
                 System.out.println("Not able, win task2 to make it available.");
                 System.out.println("Press any key");
                 anykey = scan.next();
-                introduction(scan);
             }
             else {
                 timesb = 1;
@@ -351,24 +348,20 @@ public class RPG_Project {
         }
         else if (select == 4) {
             Achievement(scan);
-            introduction(scan);
         }
         else if (select == 5) {
             System.out.println("Your game code is "+(process+achievement*1000)+", enter that in selection 6 to continue your game");
             System.out.println("Press any key");
             anykey=scan.next();
-            introduction(scan);
         }
         else if (select == 6) {
             System.out.println("Enter your game code");
             int num = scan.nextInt();
             process=num%1000;
             achievement=(num-num%1000)/1000;
-            introduction(scan);
         }
         else if (select == 7) {
             process = 7117;
-            introduction(scan);
         }
         else if (select == 8) {
             con = 0;
@@ -488,6 +481,8 @@ public class RPG_Project {
         process=process-(process-process%10)%100;
         double planea=100;
         double planeb=100;
+        String con = "y";
+        int i = 0;
         if (task2con==1) {
             System.out.println("                          XXX                         XXXXXXXX    Ammo:480      \n" +
                     "                      XXXXX  XXXXXXXXXXXXXXXXXXXXXXXXX       XXX                \n" +
@@ -604,194 +599,175 @@ public class RPG_Project {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                introduction(scan);
+                con="n";
             }
         }
-        fight1(scan);
-        System.out.println("Choose your shooting window.");
-        anykey=scan.next();
-        if (anykey.equals("1")){
-            System.out.println("You hit him!");
-            planea=planea-Math.random()*70-50;
-        }
-        else
-            System.out.println("You missed");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Enemy shoot");
-        if (Math.random()>0.5) {
-            System.out.println("Enemy hit!");
-            planeb = planeb - Math.random() * 70 - 50;
-        }
-        else
-            System.out.println("Enemy missed");
-        System.out.println("Your hp is "+planeb+"\nYour enemy's hp is "+planea);
-        if (planeb<0) {
-            process = process + 50;
-            System.out.println("You been shoot down. Try this task again.");
-            if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==10||
-                    (achievement-achievement%10)%100==40||(achievement-achievement%10)%100==50) {
-                achievement = achievement + 20;
-                System.out.println("You got the achievement:Jinx");
-                System.out.println("Press any key to continue");
-                anykey=scan.next();
+        while (con.equals("y")&&i==0) {
+            fight1(scan);
+            System.out.println("Choose your shooting window.");
+            anykey = scan.next();
+            if (anykey.equals("1")) {
+                System.out.println("You hit him!");
+                planea = planea - Math.random() * 70 - 50;
+            } else
+                System.out.println("You missed");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
-            introduction(scan);
-        }
-        else if (planea<0) {
-            process=process+10;
-            System.out.println("You shoot down enemy plane. ");
-            if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==20||
-                    (achievement-achievement%10)%100==40||(achievement-achievement%10)%100==60) {
-                achievement = achievement + 10;
-                System.out.println("You got the achievement:Airborne Sniper");
-                System.out.println("Press any key to continue");
-                anykey=scan.next();
+            System.out.println("Enemy shoot");
+            if (Math.random() > 0.5) {
+                System.out.println("Enemy hit!");
+                planeb = planeb - Math.random() * 70 - 50;
+            } else
+                System.out.println("Enemy missed");
+            System.out.println("Your hp is " + planeb + "\nYour enemy's hp is " + planea);
+            if (planeb < 0) {
+                process = process + 50;
+                System.out.println("You been shoot down. Try this task again.");
+                if ((achievement - achievement % 10) % 100 == 0 || (achievement - achievement % 10) % 100 == 10 ||
+                        (achievement - achievement % 10) % 100 == 40 || (achievement - achievement % 10) % 100 == 50) {
+                    achievement = achievement + 20;
+                    System.out.println("You got the achievement:Jinx");
+                }
+                con="n";
+            } else if (planea < 0) {
+                process = process + 10;
+                System.out.println("You shoot down enemy plane. ");
+                if ((achievement - achievement % 10) % 100 == 0 || (achievement - achievement % 10) % 100 == 20 ||
+                        (achievement - achievement % 10) % 100 == 40 || (achievement - achievement % 10) % 100 == 60) {
+                    achievement = achievement + 10;
+                    System.out.println("You got the achievement:Airborne Sniper");
+                }
+                con="n";
             }
-            introduction(scan);
-        }
-        System.out.println("Press any key to continue");
-        anykey=scan.next();
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
-                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        fight2(scan);
-
-
-        System.out.println("Choose your shooting window.");
-        anykey=scan.next();
-        if (anykey.equals("3")){
-            System.out.println("You hit him!");
-            planea=planea-Math.random()*70-50;
-        }
-        else {
-            System.out.println("You missed");
-            System.out.println("Remember, the deflection you choose need to increase by the distance of your and enemy.");
-        }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Enemy shoot");
-        if (Math.random()>0.5) {
-            System.out.println("Enemy hit!");
-            planeb = planeb - Math.random() * 70 - 50;
-        }
-        else
-            System.out.println("Enemy missed");
-        System.out.println("Your hp is "+planeb+"\nYour enemy's hp is "+planea);
-        if (planeb<0) {
-            process = process + 50;
-            System.out.println("You been shoot down. Try this task again.");
-            System.out.println("Press any key");
-            anykey=scan.next();
-            introduction(scan);
-        }
-        else if (planea<0) {
-            System.out.println("You win this time, average royal airforce pilot.");
-            process=process+20;
             System.out.println("Press any key to continue");
-            anykey=scan.next();
-            introduction(scan);
+            anykey = scan.next();
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            i++;
         }
-        System.out.println("Press any key to continue");
-        anykey=scan.next();
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
-                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
-        fight3(scan);
-        System.out.println("Choose your shooting window.");
-        anykey=scan.next();
-        if (anykey.equals("2")){
-            System.out.println("You hit him!");
-            planea=planea-Math.random()*70-50;
-        }
-        else {
-            System.out.println("You missed");
-            System.out.println("Remember, the deflection you choose need to increase by the distance of your and enemy.");
-        }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Enemy shoot");
-        if (Math.random()>0.5) {
-            System.out.println("Enemy hit!");
-            planeb = planeb - Math.random() * 70 - 50;
-        }
-        else
-            System.out.println("Enemy missed");
-        System.out.println("Your hp is "+planeb+"\nYour enemy's hp is "+planea);
-        if (planeb<0) {
-            process = process + 50;
-            System.out.println("You been shoot down. Try this task again.");
-            System.out.println("Press any key");
-            anykey=scan.next();
-            introduction(scan);
-        }
-        else if (planea<0) {
-            System.out.println("You win this time, average royal airforce pilot.");
-            process=process+30;
+        while (con.equals("y")&&i==1) {
+            fight2(scan);
+            System.out.println("Choose your shooting window.");
+            anykey = scan.next();
+            if (anykey.equals("3")) {
+                System.out.println("You hit him!");
+                planea = planea - Math.random() * 70 - 50;
+            } else {
+                System.out.println("You missed");
+                System.out.println("Remember, the deflection you choose need to increase by the distance of your and enemy.");
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Enemy shoot");
+            if (Math.random() > 0.5) {
+                System.out.println("Enemy hit!");
+                planeb = planeb - Math.random() * 70 - 50;
+            } else
+                System.out.println("Enemy missed");
+            System.out.println("Your hp is " + planeb + "\nYour enemy's hp is " + planea);
+            if (planeb < 0) {
+                process = process + 50;
+                System.out.println("You been shoot down. Try this task again.");
+                con="n";
+            } else if (planea < 0) {
+                System.out.println("You win this time, average royal airforce pilot.");
+                process = process + 20;
+                con="n";
+            }
             System.out.println("Press any key to continue");
-            anykey=scan.next();
-            introduction(scan);
+            anykey = scan.next();
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            i++;
         }
-        System.out.println("Press any key to continue");
-        anykey=scan.next();
 
-        fight4(scan);
-        System.out.println("Choose your shooting window.");
-        anykey=scan.next();
-        if (anykey.equals("1")){
-            System.out.println("You hit him!");
-            planea=planea-Math.random()*70-50;
-        }
-        else {
-            System.out.println("You missed");
-            System.out.println("Remember, the deflection you choose need to increase by the distance of your and enemy.");
-        }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Enemy shoot");
-        if (Math.random()>0.5) {
-            System.out.println("Enemy hit!");
-            planeb = planeb - Math.random() * 70 - 50;
-        }
-        else
-            System.out.println("Enemy missed");
-        System.out.println("Your hp is "+planeb+"\nYour enemy's hp is "+planea);
-        if (planeb<0) {
-            process = process + 50;
-            System.out.println("You been shoot down. Try this task again.");
-            System.out.println("Press any key");
-            anykey=scan.next();
-            introduction(scan);
-        }
-        else if (planea<0) {
-            System.out.println("You win this time, average royal airforce pilot.");
-            process=process+40;
+        while (con.equals("y")&&i==2) {
+            fight3(scan);
+            System.out.println("Choose your shooting window.");
+            anykey = scan.next();
+            if (anykey.equals("2")) {
+                System.out.println("You hit him!");
+                planea = planea - Math.random() * 70 - 50;
+            } else {
+                System.out.println("You missed");
+                System.out.println("Remember, the deflection you choose need to increase by the distance of your and enemy.");
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Enemy shoot");
+            if (Math.random() > 0.5) {
+                System.out.println("Enemy hit!");
+                planeb = planeb - Math.random() * 70 - 50;
+            } else
+                System.out.println("Enemy missed");
+            System.out.println("Your hp is " + planeb + "\nYour enemy's hp is " + planea);
+            if (planeb < 0) {
+                process = process + 50;
+                System.out.println("You been shoot down. Try this task again.");
+                con="n";
+            } else if (planea < 0) {
+                System.out.println("You win this time, average royal airforce pilot.");
+                process = process + 30;
+                con="n";
+            }
             System.out.println("Press any key to continue");
-            anykey=scan.next();
-            introduction(scan);
+            anykey = scan.next();
+            i++;
         }
-        System.out.println("You are out of ammo, mission failed.");
-        process=process+50;
-        if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==10||
-                (achievement-achievement%10)%100==20||(achievement-achievement%10)%100==30) {
-            achievement = achievement + 40;
-            System.out.println("You got the achievement:Cadet");
-        }
-        System.out.println("Press any key to continue");
-        anykey=scan.next();
-        introduction(scan);
 
+        while (con.equals("y")&&i==3) {
+            fight4(scan);
+            System.out.println("Choose your shooting window.");
+            anykey = scan.next();
+            if (anykey.equals("1")) {
+                System.out.println("You hit him!");
+                planea = planea - Math.random() * 70 - 50;
+            } else {
+                System.out.println("You missed");
+                System.out.println("Remember, the deflection you choose need to increase by the distance of your and enemy.");
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Enemy shoot");
+            if (Math.random() > 0.5) {
+                System.out.println("Enemy hit!");
+                planeb = planeb - Math.random() * 70 - 50;
+            } else
+                System.out.println("Enemy missed");
+            System.out.println("Your hp is " + planeb + "\nYour enemy's hp is " + planea);
+            if (planeb < 0) {
+                process = process + 50;
+                System.out.println("You been shoot down. Try this task again.");
+                con="n";
+            } else if (planea < 0) {
+                System.out.println("You win this time, average royal airforce pilot.");
+                process = process + 40;
+                con="n";
+            }
+            System.out.println("You are out of ammo, mission failed.");
+            process = process + 50;
+            if ((achievement - achievement % 10) % 100 == 0 || (achievement - achievement % 10) % 100 == 10 ||
+                    (achievement - achievement % 10) % 100 == 20 || (achievement - achievement % 10) % 100 == 30) {
+                achievement = achievement + 40;
+                System.out.println("You got the achievement:Cadet");
+            }
+            System.out.println("Press any key to continue");
+            anykey = scan.next();
+            con="n";
+        }
 
     }
     public static void fight1(Scanner scan){
@@ -907,7 +883,5 @@ public class RPG_Project {
         System.out.println("Show detail by enter the number.");
         System.out.println("press q for quit");
         String choise=scan.next();
-        if (choise.equals("Q")||choise.equals("q"))
-            introduction(scan);
     }
 }
