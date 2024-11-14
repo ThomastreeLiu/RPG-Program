@@ -6,6 +6,7 @@ public class RPG_Project {
     private static String anykey;
     private static int timesa = 0;
     private static int timesb = 0;
+    private static int task2con = 0;
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (con == 1) {
@@ -234,6 +235,11 @@ public class RPG_Project {
             task1finish(scan);
 
             if ((achievement%100)%10==0||(achievement%100)%10==1||(achievement%100)%10==2||(achievement%100)%10==3) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 System.out.println("*\n" +
                         "You get the Achievement: Live for fight another day");
                 achievement = achievement + 4;
@@ -252,9 +258,10 @@ public class RPG_Project {
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("You have done this task, you want to:\n" +
                     "1.Redo this task(the process of this task will be restart)\n" +
-                    "2.quit\n"+"Make your choise in number.");
-            int choise = scan.nextInt();
-            if (choise==1) {
+                    "2.Redo this task(jump teaching level)"+
+                    "3.quit\n"+"Make your choise in number.");
+            task2con = scan.nextInt();
+            if (task2con==1||task2con==2) {
                 process = process - cprocess % 100;
                 testflight(scan);
             }
@@ -266,6 +273,10 @@ public class RPG_Project {
                 throw new RuntimeException(e);
             }
             introduction(scan);
+        }
+        else {
+            task2con=1;
+            testflight(scan);
         }
     }
 
@@ -320,6 +331,7 @@ public class RPG_Project {
                 System.out.println("Not able, win task1 to make it available.");
                 System.out.println("Press any key");
                 anykey = scan.next();
+                introduction(scan);
             }
             else {
                 task2(scan);
@@ -330,6 +342,7 @@ public class RPG_Project {
                 System.out.println("Not able, win task2 to make it available.");
                 System.out.println("Press any key");
                 anykey = scan.next();
+                introduction(scan);
             }
             else {
                 timesb = 1;
@@ -338,20 +351,24 @@ public class RPG_Project {
         }
         else if (select == 4) {
             Achievement(scan);
+            introduction(scan);
         }
         else if (select == 5) {
             System.out.println("Your game code is "+(process+achievement*1000)+", enter that in selection 6 to continue your game");
             System.out.println("Press any key");
             anykey=scan.next();
+            introduction(scan);
         }
         else if (select == 6) {
             System.out.println("Enter your game code");
             int num = scan.nextInt();
             process=num%1000;
             achievement=(num-num%1000)/1000;
+            introduction(scan);
         }
         else if (select == 7) {
             process = 7117;
+            introduction(scan);
         }
         else if (select == 8) {
             con = 0;
@@ -471,138 +488,126 @@ public class RPG_Project {
         process=process-(process-process%10)%100;
         double planea=100;
         double planeb=100;
-        System.out.println("                          XXX                         XXXXXXXX    Ammo:480      \n" +
-                "                      XXXXX  XXXXXXXXXXXXXXXXXXXXXXXXX       XXX                \n" +
-                "                  XXXXX      X                       X         XX               \n" +
-                "          XXXXXXXXX          X                       X           XXX            \n" +
-                "      XXXX                   X                       X             XXXXXXXX     \n" +
-                "    XXX                      X                       X                    XXX   \n" +
-                "    X                        X                       X                      XXX \n" +
-                "   XX                        X XXXXXXXXXXXXXXXXXXXXX X                        X \n" +
-                "  XX                         X X        XX         X X                        X \n" +
-                " XX                          X X        XX         X X                        X \n" +
-                "XX                           X X      XXXXXX       X X                        XX\n" +
-                "X                            X XXXXX X      X XXXXXX X                         X\n" +
-                "                             X XXXXX X     X  XXXXXX X                          \n" +
-                "                             X X       X  X        X X                          \n" +
-                "                             X X        XX         X X                          \n" +
-                "                             X X        XX         X X                          \n" +
-                "                             X XXXXXXXXXXXXXXXXXXXXX X                          \n" +
-                "                             XXX                   XXXX                         \n" +
-                "                          XXXX                        XXX                       \n" +
-                "                        XXX                             XXXX                    \n" +
-                "                     XXXX                                  XXXX                 \n" +
-                "                  XXXX                                         XXX              \n" +
-                "                XXX                                              XXX            \n" +
-                "              XXX                                                  XXXX         ");
-        System.out.println("This is your cabin, on the middle there is a sight ring. On the right top \n" +
-                "there is your ammo. You got 480 bullet for auto cannon, but don't waste it, it's not a \n" +
-                "large number for four cannon.");
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Remember, the velocity of cannon bullets are slow compare to the speed of \n" +
-                "plane and its distance, so make sure you aim the path of enemy aircraft to be passed \n" +
-                "instead aircraft itselves. ");
-        System.out.println("               XXXXXXXXXXXXX               \n" +
-                "          XXXXX      X      XXXXX          \n" +
-                "        XX           X           XX        \n" +
-                "      XX             X             XX      \n" +
-                "    XX               X     XX        XX    \n" +
-                "   X                 X      XXX        X   \n" +
-                "  X                  X    XXXXXX        X  \n" +
-                " X             XX    X  XXXXXXXXX        X \n" +
-                "X               XX   X XXXXXX   X         X\n" +
-                "X                XX XXXXXXX               X\n" +
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "X              XX XXXX                    X\n" +
-                "X             XX XXXXX                    X\n" +
-                " X           XXXXX   XX                  X \n" +
-                "  X          XXX     XXXX               X  \n" +
-                "   X                 X XXX             X   \n" +
-                "    XX               X   X           XX    \n" +
-                "      XX             X             XX      \n" +
-                "        XX           X           XX        \n" +
-                "          XXXXX      X      XXXXX          \n" +
-                "               XXXXXXXXXXXXX               ");
-        System.out.println("This is not correct, do not aim the plane directly, that's wasting ammo.");
-        System.out.println("XXXX              XXXX\n" +
-                "XXXXX            XXXXX\n" +
-                "XXXXXX          XXXXXX\n" +
-                " XXXXXX        XXXXXX \n" +
-                "  XXXXXX      XXXXXX  \n" +
-                "   XXXXXX    XXXXXX   \n" +
-                "    XXXXXX  XXXXXX    \n" +
-                "     XXXXXXXXXXXX     \n" +
-                "      XXXXXXXXXX      \n" +
-                "       XXXXXXXX       \n" +
-                "        XXXXXX        \n" +
-                "       XXXXXXXX       \n" +
-                "      XXXXXXXXXX      \n" +
-                "     XXXXXXXXXXXX     \n" +
-                "    XXXXXX  XXXXXX    \n" +
-                "   XXXXXX    XXXXXX   \n" +
-                "  XXXXXX      XXXXXX  \n" +
-                " XXXXXX        XXXXXX \n" +
-                "XXXXXX          XXXXXX\n" +
-                "XXXXX            XXXXX");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("Enter any key");
-        anykey=scan.next();
-        System.out.println("Now is the correct example.");
-        System.out.println("                                             XX           Ammo=480\n" +
-                "               XXXXXXXXXXXXX       XXXX       XX X    \n" +
-                "          XXXXX      X      XXXXX     XX     XXXXXX   \n" +
-                "        XX           X           XX    XX   XXXXX XXX \n" +
-                "      XX             X             XX    XXXXXX      X\n" +
-                "    XX               X               XXXXXXXX         \n" +
-                "   X                 X                 XXX  XX        \n" +
-                "  X                  X                  X    XXX      \n" +
-                " X                   X                   X     XX     \n" +
-                "X                    X                    X     X     \n" +
-                "X                    X                    X           \n" +
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           \n" +
-                "X                    X                    X           \n" +
-                "X                    X                    X           \n" +
-                " X                   X                   X            \n" +
-                "  X                  X                  X             \n" +
-                "   X                 X                 X              \n" +
-                "    XX               X               XX               \n" +
-                "      XX             X             XX                 \n" +
-                "        XX           X           XX                   \n" +
-                "          XXXXX      X      XXXXX                     \n" +
-                "               XXXXXXXXXXXXX                          ");
-        System.out.println("Aim the path plane is going to pass, the deflection you need to choose depends on \n" +
-                "You distance, your speed and your gun. Normally you can just follow your hunch to shoot.");
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("1.Start the task\n2.Redo the training\nOther number to return the menu");
-        int choise = scan.nextInt();
-        if (choise==1) {
-            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
-                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-            fight1(scan);
-        }
-        else if (choise==2)
-            testflight(scan);
-        else {
-            System.out.println("You will back to menu");
+        if (task2con==1) {
+            System.out.println("                          XXX                         XXXXXXXX    Ammo:480      \n" +
+                    "                      XXXXX  XXXXXXXXXXXXXXXXXXXXXXXXX       XXX                \n" +
+                    "                  XXXXX      X                       X         XX               \n" +
+                    "          XXXXXXXXX          X                       X           XXX            \n" +
+                    "      XXXX                   X                       X             XXXXXXXX     \n" +
+                    "    XXX                      X                       X                    XXX   \n" +
+                    "    X                        X                       X                      XXX \n" +
+                    "   XX                        X XXXXXXXXXXXXXXXXXXXXX X                        X \n" +
+                    "  XX                         X X        XX         X X                        X \n" +
+                    " XX                          X X        XX         X X                        X \n" +
+                    "XX                           X X      XXXXXX       X X                        XX\n" +
+                    "X                            X XXXXX X      X XXXXXX X                         X\n" +
+                    "                             X XXXXX X     X  XXXXXX X                          \n" +
+                    "                             X X       X  X        X X                          \n" +
+                    "                             X X        XX         X X                          \n" +
+                    "                             X X        XX         X X                          \n" +
+                    "                             X XXXXXXXXXXXXXXXXXXXXX X                          \n" +
+                    "                             XXX                   XXXX                         \n" +
+                    "                          XXXX                        XXX                       \n" +
+                    "                        XXX                             XXXX                    \n" +
+                    "                     XXXX                                  XXXX                 \n" +
+                    "                  XXXX                                         XXX              \n" +
+                    "                XXX                                              XXX            \n" +
+                    "              XXX                                                  XXXX         ");
+            System.out.println("This is your cabin, on the middle there is a sight ring. On the right top \n" +
+                    "there is your ammo. You got 480 bullet for auto cannon, but don't waste it, it's not a \n" +
+                    "large number for four cannon.");
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("Remember, the velocity of cannon bullets are slow compare to the speed of \n" +
+                    "plane and its distance, so make sure you aim the path of enemy aircraft to be passed \n" +
+                    "instead aircraft itselves. ");
+            System.out.println("               XXXXXXXXXXXXX               \n" +
+                    "          XXXXX      X      XXXXX          \n" +
+                    "        XX           X           XX        \n" +
+                    "      XX             X             XX      \n" +
+                    "    XX               X     XX        XX    \n" +
+                    "   X                 X      XXX        X   \n" +
+                    "  X                  X    XXXXXX        X  \n" +
+                    " X             XX    X  XXXXXXXXX        X \n" +
+                    "X               XX   X XXXXXX   X         X\n" +
+                    "X                XX XXXXXXX               X\n" +
+                    "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                    "X              XX XXXX                    X\n" +
+                    "X             XX XXXXX                    X\n" +
+                    " X           XXXXX   XX                  X \n" +
+                    "  X          XXX     XXXX               X  \n" +
+                    "   X                 X XXX             X   \n" +
+                    "    XX               X   X           XX    \n" +
+                    "      XX             X             XX      \n" +
+                    "        XX           X           XX        \n" +
+                    "          XXXXX      X      XXXXX          \n" +
+                    "               XXXXXXXXXXXXX               ");
+            System.out.println("This is not correct, do not aim the plane directly, that's wasting ammo.");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Press any key to continue");
+            anykey=scan.next();
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            introduction(scan);
+            System.out.println("\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("Now is the correct example.");
+            System.out.println("                                             XX           Ammo=480\n" +
+                    "               XXXXXXXXXXXXX       XXXX       XX X    \n" +
+                    "          XXXXX      X      XXXXX     XX     XXXXXX   \n" +
+                    "        XX           X           XX    XX   XXXXX XXX \n" +
+                    "      XX             X             XX    XXXXXX      X\n" +
+                    "    XX               X               XXXXXXXX         \n" +
+                    "   X                 X                 XXX  XX        \n" +
+                    "  X                  X                  X    XXX      \n" +
+                    " X                   X                   X     XX     \n" +
+                    "X                    X                    X     X     \n" +
+                    "X                    X                    X           \n" +
+                    "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           \n" +
+                    "X                    X                    X           \n" +
+                    "X                    X                    X           \n" +
+                    " X                   X                   X            \n" +
+                    "  X                  X                  X             \n" +
+                    "   X                 X                 X              \n" +
+                    "    XX               X               XX               \n" +
+                    "      XX             X             XX                 \n" +
+                    "        XX           X           XX                   \n" +
+                    "          XXXXX      X      XXXXX                     \n" +
+                    "               XXXXXXXXXXXXX                          ");
+            System.out.println("Aim the path plane is going to pass, the deflection you need to choose depends on \n" +
+                    "You distance, your speed and your gun. Normally you can just follow your hunch to shoot.");
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("1.Start the task\n2.Redo the training\nOther number to return the menu");
+            int choise = scan.nextInt();
+            if (choise == 1) {
+                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            } else if (choise == 2)
+                testflight(scan);
+            else {
+                System.out.println("You will back to menu");
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                introduction(scan);
+            }
         }
+        fight1(scan);
         System.out.println("Choose your shooting window.");
         anykey=scan.next();
         if (anykey.equals("1")){
@@ -627,8 +632,8 @@ public class RPG_Project {
         if (planeb<0) {
             process = process + 50;
             System.out.println("You been shoot down. Try this task again.");
-            if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==1||
-                    (achievement-achievement%10)%100==4||(achievement-achievement%10)%100==5) {
+            if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==10||
+                    (achievement-achievement%10)%100==40||(achievement-achievement%10)%100==50) {
                 achievement = achievement + 20;
                 System.out.println("You got the achievement:Jinx");
                 System.out.println("Press any key to continue");
@@ -639,8 +644,8 @@ public class RPG_Project {
         else if (planea<0) {
             process=process+10;
             System.out.println("You shoot down enemy plane. ");
-            if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==2||
-                    (achievement-achievement%10)%100==4||(achievement-achievement%10)%100==6) {
+            if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==20||
+                    (achievement-achievement%10)%100==40||(achievement-achievement%10)%100==60) {
                 achievement = achievement + 10;
                 System.out.println("You got the achievement:Airborne Sniper");
                 System.out.println("Press any key to continue");
@@ -777,8 +782,9 @@ public class RPG_Project {
             introduction(scan);
         }
         System.out.println("You are out of ammo, mission failed.");
-        if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==1||
-                (achievement-achievement%10)%100==2||(achievement-achievement%10)%100==3) {
+        process=process+50;
+        if ((achievement-achievement%10)%100==0||(achievement-achievement%10)%100==10||
+                (achievement-achievement%10)%100==20||(achievement-achievement%10)%100==30) {
             achievement = achievement + 40;
             System.out.println("You got the achievement:Cadet");
         }
