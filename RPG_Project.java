@@ -876,12 +876,40 @@ public class RPG_Project {
             num=num+2;
         else if (achievement%10==7)
             num=num+3;
-
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
-                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        System.out.println("Achievement("+num+"/9)");
-        System.out.println("Show detail by enter the number.");
-        System.out.println("press q for quit");
-        String choise=scan.next();
+        int conA = 1;
+        while (conA==1) {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("1.Knights of old\n2.Live for fight another day\n3.Jinx\n4.Airborne Sniper\n5.Cadet\n");
+            System.out.println("Achievement(" + num + "/9)");
+            System.out.println("Show detail by enter the number.");
+            System.out.println("press q for quit");
+            String choise = scan.next();
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            if (choise.equals("q"))
+                conA=0;
+            else if (choise.equals("1")) {
+                if (achievement%10==1||achievement%10==3||achievement%10==5||achievement%10==7)
+                    System.out.println("You have the spirit of chivalry, but this is World War II, an evil and brutal war.");
+                else
+                    System.out.println("You can get it in task 1");
+                System.out.println("Press any key to continue.");
+            }
+            else if (choise.equals("2")) {
+                if (achievement % 10 == 2 || achievement % 10 == 3 || achievement % 10 == 6 || achievement % 10 == 7)
+                    System.out.println("You survive from the Germany plane, not bright and shiny but at least it saves your life.");
+                else
+                    System.out.println("You can get it in task 1");
+                System.out.println("Press any key to continue.");
+            }
+            else if (choise.equals("2")) {
+                if (achievement % 10 == 4 || achievement % 10 == 5 || achievement % 10 == 6 || achievement % 10 == 7)
+                    System.out.println("You use your wisdom leave gracefully, you are a true knight in shining armor.");
+                else
+                    System.out.println("You can get it in task 1");
+                System.out.println("Press any key to continue.");
+            }
+        }
     }
 }
