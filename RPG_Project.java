@@ -246,17 +246,18 @@ public class RPG_Project {
 
 
     public static void task2(Scanner scan) {
-        String quit = "n";
         int cprocess = process-process%10;
-        if (cprocess%100==70||cprocess%100==90){
+        if (cprocess%100==10||cprocess%100==20||cprocess%100==30||cprocess%100==40){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("You have done this task, you want to:\n" +
                     "1.Redo this task(the process of this task will be restart)\n" +
                     "2.quit\n"+"Make your choise in number.");
             int choise = scan.nextInt();
-            if (choise==1)
-                process=process-cprocess%100;
+            if (choise==1) {
+                process = process - cprocess % 100;
+                testflight(scan);
+            }
             else
                 System.out.println("You will back to manu");
             try {
@@ -264,63 +265,7 @@ public class RPG_Project {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-        }
-        else if (cprocess%100>0&&cprocess%100<70||cprocess%100==80) {
-            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
-                    "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-            System.out.println("You are in the middle of the task, you want to:\n" +
-                    "1.Continue your task\n" +
-                    "2.Restart your task(this will restart your game process of this task)\n" +
-                    "3.Quit this task\n" +
-                    "Make your choise in number.");
-            int choise = scan.nextInt();
-            if (choise==1);
-            else if (choise==2)
-                process=process-cprocess%100;
-            else {
-                quit = "y";
-                System.out.println("You will back to manu.");
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        }
-        while (process%100>0&&process%100<10&&quit.equals("n")){
-            System.out.println("August 13, 1940");
-            System.out.println("5:00 A.M");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            System.out.println("First attack");
-            System.out.println("Choose your character");
-            System.out.println("1.British fighter pilot\n2.Germany bomber\n3.Commander of British airfield defend.");
-            int choose = scan.nextInt();
-            if (choose==1)
-                process=process+10;
-            else if (choose==2)
-                process=process+30;
-            else if (choose==3)
-                process=process+50;
-            else {
-                System.out.println("You are back to menu");
-                quit="y";
-            }
-        }
-        while (process%100>9&&process%100<20&&quit.equals("n")){
-            System.out.println("Your goal is to shoot down planes, shoot sown 3 planes and make sure no base been\n" +
-                    "bombed will win this task.");
-            System.out.println("Remember, the velocity of cannon bullets are slow compare to the speed of \n" +
-                    "plane and its distance, so make sure you aim the path of enemy aircraft to be passed \n" +
-                    "instead aircraft itselves. ");
-            System.out.println("press any key to continue.");
-            anykey=scan.next();
-            for (int bullet = 480;bullet>0;){
-
-            }
+            introduction(scan);
         }
     }
 
@@ -377,7 +322,7 @@ public class RPG_Project {
                 anykey = scan.next();
             }
             else {
-                testflight(scan);
+                task2(scan);
             }
         }
         else if (select == 3) {
