@@ -956,7 +956,7 @@ public class RPG_Project {
         System.out.println("Show detail by enter the number.");
         System.out.println("press q for quit");
         String choise=scan.next();
-        if (choise.equals("q")||choise.equals("q"))
+        if (choise.equals("Q")||choise.equals("q"))
             introduction(scan);
     }
 }
