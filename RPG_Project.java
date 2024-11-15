@@ -880,7 +880,8 @@ public class RPG_Project {
         while (conA==1) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-            System.out.println("1.Knights of old\n2.Live for fight another day\n3.Jinx\n4.Airborne Sniper\n5.Cadet\n");
+            System.out.println("1.Knights of old\n2.Live for fight another day\n3.Flee in a dilemma\n4.Jinx" +
+                    "\n5.Airborne Sniper\n6.Cadet\n");
             System.out.println("Achievement(" + num + "/9)");
             System.out.println("Show detail by enter the number.");
             System.out.println("press q for quit");
@@ -903,9 +904,9 @@ public class RPG_Project {
                     System.out.println("You can get it in task 1");
                 System.out.println("Press any key to continue.");
             }
-            else if (choise.equals("2")) {
+            else if (choise.equals("3")) {
                 if (achievement % 10 == 4 || achievement % 10 == 5 || achievement % 10 == 6 || achievement % 10 == 7)
-                    System.out.println("You use your wisdom leave gracefully, you are a true knight in shining armor.");
+                    System.out.println("Although it wasn't a good battle, you finish your mission, got message back");
                 else
                     System.out.println("You can get it in task 1");
                 System.out.println("Press any key to continue.");
