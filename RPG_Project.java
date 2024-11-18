@@ -282,71 +282,460 @@ public class RPG_Project {
 
 
     public static void task3(Scanner scan) {
-        int aga = 0;
+        int aga = 1;
         int tra = 0;
-        int con = 0;
+        int con = 1;
+        int exp = 0;
+        int l1=0;
+        int l2=0;
+        int l3=0;
+        int l4=0;
+        int l5=0;
+        int l =0;
+        int r =0;
+        int cona=0;
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         if (task3t>0){
             System.out.println("You have finish this task, you want to:\n1.Try the task again with tutorial\n2.Try the task again without tutorial\n" +
                     "3.quit the task\nEnter your choise in number.");
-            anykey=scan.next();
-            if (anykey.equals(1))
+            cona=scan.nextInt();
+            if (cona==1)
                 tra = 1;
-            else if (anykey.equals(2));
+            else if (cona==2);
             else
                 con=0;
 
         }
-        while (aga==0&&task3t==0||aga==0&&tra==1) {
+        while (aga==1&&task3t==0&&con==1||aga==1&&tra==1&&con==1) {
             System.out.println("You are a Royal Engineers, people like you don't kill in the air like these pilots, but " +
                     "\nyou also have important missions on you:dismantling the bomb didn't explode or have delay fuse.");
             System.out.println("Here is the bomb dismantling guidebook:\nThe bomb control panel looks like this:\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
                     "X                                                              X\n" +
                     "X                                                              X\n" +
                     "X------                                                  ------X\n" +
-                    "X     |                                                  |     X\n" +
+                    "X     1                                                  1     X\n" +
                     "X------                                                  ------X\n" +
                     "X                                                              X\n" +
                     "X------                                                  ------X\n" +
-                    "X     |                                                  |     X\n" +
+                    "X     2                                                  2     X\n" +
                     "X------                                                  ------X\n" +
                     "X                                                              X\n" +
                     "X------                                                  ------X\n" +
-                    "X     |                                                  |     X\n" +
+                    "X     3                                                  3     X\n" +
                     "X------                                                  ------X\n" +
                     "X                                                              X\n" +
                     "X------                                                  ------X\n" +
-                    "X     |                                                  |     X\n" +
+                    "X     4                                                  4     X\n" +
                     "X------                                                  ------X\n" +
                     "X                                                              X\n" +
                     "X------                                                  ------X\n" +
-                    "X     |                                                  |     X\n" +
+                    "X     5                                                  5     X\n" +
                     "X------                                                  ------X\n" +
                     "X                                                              X\n" +
                     "X                                                              X\n" +
                     "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                    "There is 10 terminals in both sides, each side has 5 terminals. The terminals will filled by characters in real bomb.");
+                    "There is 10 terminals in both sides, each side has 5 terminals. The terminals will filled by " +
+                    "characters in real bomb.");
             System.out.println("Press any key to continue");
             anykey = scan.next();
             System.out.println("By the sacrifice of dozens of sappers, we make this guidebook to help engineers to dismantling\n" +
                     "bombs. Here is the rule:");
             System.out.println("press any key to continue");
             anykey = scan.next();
-            System.out.println("1.? terminal must be connect to ! terminal, if there's multiple way to connect, you need to make sure the path you connect are crossed.");
+            System.out.println("1.? terminal must be connect to ! terminal, if there's multiple way to connect, you need" +
+                    " to make sure the path you connect are crossed.");
             try {
                 Thread.sleep(1500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println("2.# terminal must be connect to | terminal, if there's multiple way to connect, you need to make sure the path you connect are parallel.");
+            System.out.println("2.# terminal must be connect to | terminal, if there's multiple way to connect, you need" +
+                    " to make sure the path you connect are parallel.");
             try {
                 Thread.sleep(1500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println("3.? terminal can connect to any terminal, but if you connect it to the terminal should be connected with specific terminal, the bomb will explode.");
+            System.out.println("3.? terminal can connect to any terminal, but if you connect it to the terminal should " +
+                    "be connected with specific terminal, the bomb will explode.");
+            System.out.println("\nYou want to:\n1.Enter the task\n2.Redo the train\n3.quit this task ");
+            cona=scan.nextInt();
+            if (cona==1)
+                aga=0;
+            else if (cona==2);
+
+            else
+                con=0;
         }
+        if (con==1)
+            t00000(scan);
+        while (con==1){
+            System.out.println("This is the bomb control panel now.\n Here is the rule:\n\n" +
+                    "1.? terminal must be connect to ! terminal, if there's multiple way to connect, you need\" +\n" +
+                    "                    \" to make sure the path you connect are crossed.\n" +
+                    "2.# terminal must be connect to | terminal, if there's multiple way to connect, you need\" +\n" +
+                    "                    \" to make sure the path you connect are parallel.\n" +
+                    "3.? terminal can connect to any terminal, but if you connect it to the terminal should \" +\n" +
+                    "                    \"be connected with specific terminal, the bomb will explode.");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Select the left terminal you want to connect");
+            l=scan.nextInt();
+            System.out.println("Select the right terminal you want to connect with");
+            r=scan.nextInt();
+            if (l==1){
+                if (r==1){
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==2) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==3) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==4) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==5) {
+                    l1 = 1;
+                }
+                else{
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+            }
+            else if (l==2){
+                if (r==1){
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==2) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==3) {
+                    l2=1;
+                }
+                else if (r==4) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==5) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else{
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+            }
+            else if (l==3){
+                if (r==1){
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==2) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==3) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==4) {
+                    l3=1;
+                }
+                else if (r==5) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else{
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+            }
+            else if (l==4){
+                if (r==1){
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==2) {
+                    l4=1;
+                }
+                else if (r==3) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==4) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==5) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else{
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+            }
+            else if (l==5){
+                if (r==1){
+                    l5=1;
+                }
+                else if (r==2) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==3) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==4) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else if (r==5) {
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+                else{
+                    explode(scan);
+                    exp=1;
+                    con=0;
+                }
+            }
+            else {
+                explode(scan);
+                exp=1;
+                con=0;
+            }
+
+            //panel show process
+            if (con==1){
+                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                if (l1==0){
+
+                    if (l2==0){
+
+                        if (l3==0){
+
+                            if (l4==0){
+
+                                if (l5==0){
+                                    t00000(scan);
+                                }
+                                else if (l5==1) {
+                                    t10000(scan);
+                                }
+                            }
+                            else if (l4==1) {
+                                if (l5==0){
+                                    t01000(scan);
+                                }
+                                else if (l5==1) {
+                                    t11000(scan);
+                                }
+                            }
+                        }
+                        else if (l3==1) {
+                            if (l4==0){
+                                if (l5==0){
+                                    t00100(scan);
+                                }
+                                else if (l5==1) {
+                                    t10100(scan);
+                                }
+                            }
+                            else if (l4==1) {
+                                if (l5==0){
+                                    t01100(scan);
+                                }
+                                else if (l5==1) {
+                                    t11100(scan);
+                                }
+                            }
+                        }
+                    }
+                    else if (l2==1) {
+                        if (l3==0){
+                            if (l4==0){
+                                if (l5==0){
+                                    t00010(scan);
+                                }
+                                else if (l5==1) {
+                                    t10010(scan);
+                                }
+                            }
+                            else if (l4==1) {
+                                if (l5==0){
+                                    t01010(scan);
+                                }
+                                else if (l5==1) {
+                                    t11010(scan);
+                                }
+                            }
+                        }
+                        else if (l3==1) {
+                            if (l4==0){
+                                if (l5==0){
+                                    t00110(scan);
+                                }
+                                else if (l5==1) {
+                                    t10110(scan);
+                                }
+                            }
+                            else if (l4==1) {
+                                if (l5==0){
+                                    t01110(scan);
+                                }
+                                else if (l5==1) {
+                                    t11110(scan);
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (l1==1) {
+                    if (l2==0){
+                        if (l3==0){
+                            if (l4==0){
+                                if (l5==0){
+                                    t00001(scan);
+                                }
+                                else if (l5==1) {
+                                    t10001(scan);
+                                }
+                            }
+                            else if (l4==1) {
+                                if (l5==0){
+                                    t01001(scan);
+                                }
+                                else if (l5==1) {
+                                    t11001(scan);
+                                }
+                            }
+                        }
+                        else if (l3==1) {
+                            if (l4==0){
+                                if (l5==0){
+                                    t00101(scan);
+                                }
+                                else if (l5==1) {
+                                    t10101(scan);
+                                }
+                            }
+                            else if (l4==1) {
+                                if (l5==0){
+                                    t01101(scan);
+                                }
+                                else if (l5==1) {
+                                    t11101(scan);
+                                }
+                            }
+                        }
+                    }
+                    else if (l2==1) {
+                        if (l3==0){
+                            if (l4==0){
+                                if (l5==0){
+                                    t00011(scan);
+                                }
+                                else if (l5==1) {
+                                    t10011(scan);
+                                }
+                            }
+                            else if (l4==1) {
+                                if (l5==0){
+                                    t01011(scan);
+                                }
+                                else if (l5==1) {
+                                    t11011(scan);
+                                }
+                            }
+                        }
+                        else if (l3==1) {
+                            if (l4==0){
+                                if (l5==0){
+                                    t00111(scan);
+                                }
+                                else if (l5==1) {
+                                    t10111(scan);
+                                }
+                            }
+                            else if (l4==1) {
+                                if (l5==0){
+                                    t01111(scan);
+                                }
+                                else if (l5==1) {
+                                    t11111(scan);
+                                    con=0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (exp==1){
+            System.out.println("You die because the bomb explosion, remember, follow the guidebook.");
+            if (task3t==0&&achievement-achievement%100==0||task3t==0&&achievement-achievement%100==100||task3t==0&&achievement-achievement%100==400){
+                achievement=achievement+200;
+                System.out.println("*\nYou got the achievement Kill Assist");
+            }
+            task3t=task3t+1;
+        }
+        else {
+            System.out.println("You dismantle the bomb successfully");
+            System.out.println("\n" +
+                    "\n" +
+                    " _____         _    _____   _____ _       _     _     \n" +
+                    "|_   _|_ _ ___| | _|___ /  |  ___(_)_ __ (_)___| |__  \n" +
+                    "  | |/ _` / __| |/ / |_ \\  | |_  | | '_ \\| / __| '_ \\ \n" +
+                    "  | | (_| \\__ \\   < ___) | |  _| | | | | | \\__ \\ | | |\n" +
+                    "  |_|\\__,_|___/_|\\_\\____/  |_|   |_|_| |_|_|___/_| |_|\n" +
+                    "\n");
+            if (task3t==0&&achievement-achievement%100==0||task3t==0&&achievement-achievement%100==200||task3t==0&&achievement-achievement%100==500){
+                System.out.println("*\nYou get the achievement Advanced Engineer");
+                achievement=achievement+100;
+            }
+            task3t=task3t+1;
+        }
+        System.out.println("Press anykey to continue.");
+        anykey=scan.next();
     }
 
     private static void conclusion(Scanner scan) {
@@ -429,103 +818,7 @@ public class RPG_Project {
             con = 0;
         }
     }
-    public static void plane1(Scanner scan){
-        System.out.println("                 `··``´   `                                                                     ´`  \n" +
-                "                        `                                                                           \n" +
-                "                                                                                                    \n" +
-                "´ ` ``                                           `                                   `´´```  `    ``\n" +
-                "   `´`¨`                                                                          `` `````          \n" +
-                "      ´``´        ˆ:····´´¨…`¨¨´ `                                                         `        \n" +
-                "       ¸·©LùCI¬‘¸´ `´´·˜·ˆ…’…ˆ¨ˆ·   ```                                                             \n" +
-                "   ’       ´``` ’CV‰s½½¢òÌ‰sÌn3Y¨·i¦³¬“°;ˆ¸’‚ˆ˜¨´`´·…´´`´ ```                              ´        \n" +
-                "               `´¸› …´  a’     …300±üOµµxOx6e4¾f5™©Í0£wL£££@r×–:…`   ```´·´¨´¨·´´                   \n" +
-                "                 ·ˆ    `@;     ´’°t3ç™Sy©åe¢ãè2ôžó5õüü&&22ü&üüç©Yùµ£a0ç2w©©üüüüüçw©£©56‚´ º       ·°\n" +
-                "                 l¸    ˜’  ¨ ``  ¨’“À‹¯o2®PFüš€pˆ…`´`’‚˜…¸…¸·…  …´·„O“¨´…3©4xõ54Ox¾4O54¾xµ¾‹        \n" +
-                "                 Ì…    s      ´`  h³£&ù£ù¾xõ44Àg¥¸·`´       ```    ¨y````a            `             \n" +
-                "                ´0     ™          ÷¹ÇÇUïŸO66ŸbÀÝv         `¨`  …<n¼2=    ú                          \n" +
-                "       ¨…¨…¨     <   ` C  ``·    ·~s¿/!1+‡9È$Vpý`  `ä±¨   ´……/IrƒJCíí·  ¯÷                         `\n" +
-                "       ´¨wª˜’³¨`*¨   `·@       ``´ª6ª”*+f¼ÄÚm§´       ´…¸ˆ±šûžPÀpø¶‰ÙÚn’~ºˆ……·                     `\n" +
-                "             ·ˆ`O5¯„}l}½’```     za}%~!„yw|[–¼            …·´±9ñá¶ü©4…–tj§9ŸÝûäû                   `\n" +
-                "                ¬“»i^*8ëåj¿¾xƒóDnnV!||/¦ü÷+”)J            ´‘%ú¾TµÎçwç   ½¨· ¨`                   ``·\n" +
-                "            ´•w«©§ÿÓ9(»¿r—%ókûõ0ÀœÎVYTö¤5™9×?j’…´´       ’¸…saç5¾aÍ0»   V   `                `    ``\n" +
-                "            ¨`³D¶ƒ°’*JzÏjºº²³‹*‰/>Ýç5àfh¶ŠâG¶€ãppÕêÛÔ8FUs×~º~«?i*/í)` ²Ìn˜´```                      \n" +
-                "`´             ·¸suoct<L<ìíIoOŠñzCòÍ$µ5UbÒÓÒbññ¾3Íò‰uµkÏnnú4SDZëbñÓŸ¥DFýdýÓÒDá$øXC/´°´·             \n" +
-                "`                b¢½‡=>w>iïtoIt¤s3CwêBWOÿñàkžžŸù½uJ½z1=‰uò¢±‡©t&š9?     ´ ´`´˜…·…°’¸…3ôx§Z          \n" +
-                "´                ˜Yáÿï<î7ï=llƒjsò±Yùa4ôÎ‡vÇTy6ùü†°;›ˆ:°´`´`  ¨`óú³7aÒ²¨²·…‚                         \n" +
-                "`                ¨“ªVíJÇëµº/¯»z%Cóz>¦º„“÷;’¸¨``    `´          ˜èÕ¥ó:’¹¹;˜~  ‚…’…‚´      `    ˜     \n" +
-                "                    `````  ¨````````                                                   `            \n" +
-                "                 ```   `   ¨````````                                                                \n" +
-                "                           ´```   ```                                                               \n" +
-                "                                    ´´´`````````  ```  ¨¨´´´´´´`` ``` `````    `                    \n" +
-                "                                               ```     ´´·¨´       ```  ```                       ` \n" +
-                "                                                        ```´´´¨`` ``   ` `     `                `` `\n" );
-        //https://www.asciiart.eu/image-to-ascii11
-    }
-    public static void coast(Scanner scan){
-        System.out.println("                                                   X                            \n" +
-                "           X X  X                         X   X                      X   X      \n" +
-                "         X                                       X                     X   X    \n" +
-                "             X   X                         X   X                                \n" +
-                "           X                                        X                           \n" +
-                "                                                                                \n" +
-                "                                                                                \n" +
-                "                                                                                \n" +
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "                                                                                \n" +
-                "                                                                                \n" +
-                "XXXXXXXXXXXXXX                                                                  \n" +
-                "             XXXXXXXXXXX                                                        \n" +
-                "                       XXXXXXXX                                                 \n" +
-                "                              XXXXXXXXXXXXX                                     \n" +
-                "                                          XXXXXXXXXXXXXX                        \n" +
-                "XXXXX                                                  XXXXXXXXX                \n" +
-                "X   XXXXXXX                                                    XXXXX            \n" +
-                "          XXXXXXXX                                                 XXXXX        \n" +
-                "   XXXXX         XXXXXXXX                                              XXXXX    \n" +
-                "       XX               XXXXXXXXXX                                          XXXX\n" +
-                "     XXXXXXXXX                   XXXXXXXXX                                     X\n" +
-                " XXX   XXX   XXXX    X                    XXXXXXXXXXXXXXX                       \n" +
-                "XX XX    XXX    X    XXXX                               XXXXXXXXXXX XX          \n" +
-                "    XXX    XXXX         XXXX                                         XXX        ");
-        //https://www.asciiart.eu/ascii-draw-studio/app
-    }
-    public static void coastplane(Scanner scan){
-        System.out.println("░░░░░░░░░▒░░░░░░░░░░░░░░▒▒▒▒░▒▒▒░▒░░░▒░▒▒░▒░▒▒░▒▒░▒▒▒▒▒▒░▒░▒░░░░░░░░░▒░░░░░▒▒▒▒▒▒▒▒░░░▒▒▒░▒▒░▒░▒░░▒░\n" +
-                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
-                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
-                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
-                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
-                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
-                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█▓▓▓▒▓▓███▓▒▓▓▓▓▒▒▓▓▓▓▓▓▓░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
-                "▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓░████▓▓█▓▒▓▒█▓▓▓▓▓▓▒▓▓▓▓▓▓█░░▒▓░░▓▒▒▓▒▓▒▓░░░░░░░░░░░░░░░░░░░░░░░\n" +
-                "▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▒░█▓█▓█████▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▒▒▒▒▓▒▓▒▒▒▓▒▒▒░░██▓▓▓░░░░░░░░░░░░░░░\n" +
-                "▓▓▓▓▓▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓█▓█▓▒▒█▓▓▓▓▓▓▓▓▓▓▒▒▒▓▒▓▒▒▓▒▒▒▒▒███▒▒▓░░░░░░░░░░░░░░░\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓█▓▓▓▒█▒▒▒▒▓▓▓▓▓▓▓▓▓▒░▒▒▒▒▒▒▒▒█▓█▒▒▓▓▓░▒▒▓░░░░░░░░░░\n" +
-                "▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▒▓▓▓▓▓▓▓▓▓▓█░░▒██▓▒▒▓▒▒▒▒▒░░░░▒░▒▒▒▒▒▓▒▒▒▒░▓██▓███████▒▒▒▒▒░▓▒░░░░░\n" +
-                "▓▓▓▓▒▓▒▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▒▓▓▓▓▒░▓█▓▓▓▓█▓█▓▓▓██████▒▒█▓▓█████████████▓▓▒▒██▓▒▒▒░▒░░░▒▒▒▒▒▒\n" +
-                "▓▓▒▓▒▒▒▓▓▒▓▓██▓▒▒▒▒▓▒▒▒▓░▓▓▓▓▒█▒░░▒▒▒▒▒▒██████▒▓▒▓███████▒▓█▓█▓█▓█▒▒▓▓▓▒▓█▒██▓▓█▓▒█▒▒░░░▒▒▒▒▒▒░░░░░░\n" +
-                "▒▒▒▒▒▒▒▓▓▓▒███▓▒░▒▒▓░░░█▓░▒░▒▓▒▓█████████▓███▓▓▓▓▓▓█▓▓█▓▓█▒▓▓▓████████▓█▒▒▓▓▓▓█▒▓░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
-                "▒▓▒▒▒▒▒░▒░▒▒██░░░░░▒▒░▒▒▓▓▓▒█▒▓██▓▓▒▓██▒█▓▓█▓▓▓█▓▓▓█▓█▓▓█▓▒▓▓▒█░░█░▓▓▓▓▓▓▒▓▓█▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
-                "▓▓▓▓▓▓▓▓▒▓▓▒▓█▓▓█▒▓▓██████▓▓▓█▓▓▓▓▓██▓███▓█▓▓▓█▓▓▓▓▓▒▒▓▓▓▓▒▓▓▒▓▓██░▒▓▓▓▓▒▒▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
-                "▓▒▒▓▓▒▓▓▓▓▓▓████▒███████▓█▓▓█▒▒▓▓▓▓▓▒▒███████▒███▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▓▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
-                "▒▒▒▒▒▒▒▒▓▒█████▓▓▓█▓███▓▓▒█▒█▒▒░██▓█▒█▓█▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒░█▓▓██▒▓▓▒▒▒▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
-                "▒▒▒▒▒▒▒▓▓▓█▓███████▓▓▓█▓▓▒▓██▓█▓▓▓██▓▓▓▓░████▓███▒█▓██▓▓█▓██▓▓█▓▓▓▓▓▓▓░▒▓▓▓▓▓▒▒▒▒▒▓▓▓▓▓▒▓▓▓██▓░▒▒▒▓▒\n" +
-                "▓▒▓▓▒▒▓▓▓██▓▓▓▓█████▒░▒▒▒▒▒▒▓▓█▓▓▓▓▒█▓░██████████▒█▓▓▒▓▒▓▓▓▒▒▒▒▒▒▒▒▓▒▓▓▓▓▒▓▓▒▓▓▒▒▒▒▒▓▓▓▒▓▓▒▒▒▓▒▓▓▓▓▓\n" +
-                "▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███████▒▒▒▒▓▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓█████▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▓▓▓▓▒▓▓▒▓▓▓▓▓▒▓▓▓▓▓▓\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▒▒▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
-                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
-                "▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
-        //https://www.asciiart.eu/image-to-ascii
-    }
+
     public static void task1finish(Scanner scan){
         System.out.println("\n" +
                 "\n" +
@@ -977,5 +1270,977 @@ public class RPG_Project {
                 System.out.println("Press any key to continue.");
             }
         }
+    }
+    //terms under are materials, logically are not code.
+    public static void plane1(Scanner scan){
+        System.out.println("                 `··``´   `                                                                     ´`  \n" +
+                "                        `                                                                           \n" +
+                "                                                                                                    \n" +
+                "´ ` ``                                           `                                   `´´```  `    ``\n" +
+                "   `´`¨`                                                                          `` `````          \n" +
+                "      ´``´        ˆ:····´´¨…`¨¨´ `                                                         `        \n" +
+                "       ¸·©LùCI¬‘¸´ `´´·˜·ˆ…’…ˆ¨ˆ·   ```                                                             \n" +
+                "   ’       ´``` ’CV‰s½½¢òÌ‰sÌn3Y¨·i¦³¬“°;ˆ¸’‚ˆ˜¨´`´·…´´`´ ```                              ´        \n" +
+                "               `´¸› …´  a’     …300±üOµµxOx6e4¾f5™©Í0£wL£££@r×–:…`   ```´·´¨´¨·´´                   \n" +
+                "                 ·ˆ    `@;     ´’°t3ç™Sy©åe¢ãè2ôžó5õüü&&22ü&üüç©Yùµ£a0ç2w©©üüüüüçw©£©56‚´ º       ·°\n" +
+                "                 l¸    ˜’  ¨ ``  ¨’“À‹¯o2®PFüš€pˆ…`´`’‚˜…¸…¸·…  …´·„O“¨´…3©4xõ54Ox¾4O54¾xµ¾‹        \n" +
+                "                 Ì…    s      ´`  h³£&ù£ù¾xõ44Àg¥¸·`´       ```    ¨y````a            `             \n" +
+                "                ´0     ™          ÷¹ÇÇUïŸO66ŸbÀÝv         `¨`  …<n¼2=    ú                          \n" +
+                "       ¨…¨…¨     <   ` C  ``·    ·~s¿/!1+‡9È$Vpý`  `ä±¨   ´……/IrƒJCíí·  ¯÷                         `\n" +
+                "       ´¨wª˜’³¨`*¨   `·@       ``´ª6ª”*+f¼ÄÚm§´       ´…¸ˆ±šûžPÀpø¶‰ÙÚn’~ºˆ……·                     `\n" +
+                "             ·ˆ`O5¯„}l}½’```     za}%~!„yw|[–¼            …·´±9ñá¶ü©4…–tj§9ŸÝûäû                   `\n" +
+                "                ¬“»i^*8ëåj¿¾xƒóDnnV!||/¦ü÷+”)J            ´‘%ú¾TµÎçwç   ½¨· ¨`                   ``·\n" +
+                "            ´•w«©§ÿÓ9(»¿r—%ókûõ0ÀœÎVYTö¤5™9×?j’…´´       ’¸…saç5¾aÍ0»   V   `                `    ``\n" +
+                "            ¨`³D¶ƒ°’*JzÏjºº²³‹*‰/>Ýç5àfh¶ŠâG¶€ãppÕêÛÔ8FUs×~º~«?i*/í)` ²Ìn˜´```                      \n" +
+                "`´             ·¸suoct<L<ìíIoOŠñzCòÍ$µ5UbÒÓÒbññ¾3Íò‰uµkÏnnú4SDZëbñÓŸ¥DFýdýÓÒDá$øXC/´°´·             \n" +
+                "`                b¢½‡=>w>iïtoIt¤s3CwêBWOÿñàkžžŸù½uJ½z1=‰uò¢±‡©t&š9?     ´ ´`´˜…·…°’¸…3ôx§Z          \n" +
+                "´                ˜Yáÿï<î7ï=llƒjsò±Yùa4ôÎ‡vÇTy6ùü†°;›ˆ:°´`´`  ¨`óú³7aÒ²¨²·…‚                         \n" +
+                "`                ¨“ªVíJÇëµº/¯»z%Cóz>¦º„“÷;’¸¨``    `´          ˜èÕ¥ó:’¹¹;˜~  ‚…’…‚´      `    ˜     \n" +
+                "                    `````  ¨````````                                                   `            \n" +
+                "                 ```   `   ¨````````                                                                \n" +
+                "                           ´```   ```                                                               \n" +
+                "                                    ´´´`````````  ```  ¨¨´´´´´´`` ``` `````    `                    \n" +
+                "                                               ```     ´´·¨´       ```  ```                       ` \n" +
+                "                                                        ```´´´¨`` ``   ` `     `                `` `\n" );
+        //https://www.asciiart.eu/image-to-ascii11
+    }
+    public static void coast(Scanner scan){
+        System.out.println("                                                   X                            \n" +
+                "           X X  X                         X   X                      X   X      \n" +
+                "         X                                       X                     X   X    \n" +
+                "             X   X                         X   X                                \n" +
+                "           X                                        X                           \n" +
+                "                                                                                \n" +
+                "                                                                                \n" +
+                "                                                                                \n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "                                                                                \n" +
+                "                                                                                \n" +
+                "XXXXXXXXXXXXXX                                                                  \n" +
+                "             XXXXXXXXXXX                                                        \n" +
+                "                       XXXXXXXX                                                 \n" +
+                "                              XXXXXXXXXXXXX                                     \n" +
+                "                                          XXXXXXXXXXXXXX                        \n" +
+                "XXXXX                                                  XXXXXXXXX                \n" +
+                "X   XXXXXXX                                                    XXXXX            \n" +
+                "          XXXXXXXX                                                 XXXXX        \n" +
+                "   XXXXX         XXXXXXXX                                              XXXXX    \n" +
+                "       XX               XXXXXXXXXX                                          XXXX\n" +
+                "     XXXXXXXXX                   XXXXXXXXX                                     X\n" +
+                " XXX   XXX   XXXX    X                    XXXXXXXXXXXXXXX                       \n" +
+                "XX XX    XXX    X    XXXX                               XXXXXXXXXXX XX          \n" +
+                "    XXX    XXXX         XXXX                                         XXX        ");
+        //https://www.asciiart.eu/ascii-draw-studio/app
+    }
+    public static void coastplane(Scanner scan){
+        System.out.println("░░░░░░░░░▒░░░░░░░░░░░░░░▒▒▒▒░▒▒▒░▒░░░▒░▒▒░▒░▒▒░▒▒░▒▒▒▒▒▒░▒░▒░░░░░░░░░▒░░░░░▒▒▒▒▒▒▒▒░░░▒▒▒░▒▒░▒░▒░░▒░\n" +
+                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█▓▓▓▒▓▓███▓▒▓▓▓▓▒▒▓▓▓▓▓▓▓░▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                "▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓░████▓▓█▓▒▓▒█▓▓▓▓▓▓▒▓▓▓▓▓▓█░░▒▓░░▓▒▒▓▒▓▒▓░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                "▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▒░█▓█▓█████▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▒▒▒▒▓▒▓▒▒▒▓▒▒▒░░██▓▓▓░░░░░░░░░░░░░░░\n" +
+                "▓▓▓▓▓▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓█▓█▓▒▒█▓▓▓▓▓▓▓▓▓▓▒▒▒▓▒▓▒▒▓▒▒▒▒▒███▒▒▓░░░░░░░░░░░░░░░\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓█▓▓▓▒█▒▒▒▒▓▓▓▓▓▓▓▓▓▒░▒▒▒▒▒▒▒▒█▓█▒▒▓▓▓░▒▒▓░░░░░░░░░░\n" +
+                "▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▒▓▓▓▓▓▓▓▓▓▓█░░▒██▓▒▒▓▒▒▒▒▒░░░░▒░▒▒▒▒▒▓▒▒▒▒░▓██▓███████▒▒▒▒▒░▓▒░░░░░\n" +
+                "▓▓▓▓▒▓▒▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▒▓▓▓▓▒░▓█▓▓▓▓█▓█▓▓▓██████▒▒█▓▓█████████████▓▓▒▒██▓▒▒▒░▒░░░▒▒▒▒▒▒\n" +
+                "▓▓▒▓▒▒▒▓▓▒▓▓██▓▒▒▒▒▓▒▒▒▓░▓▓▓▓▒█▒░░▒▒▒▒▒▒██████▒▓▒▓███████▒▓█▓█▓█▓█▒▒▓▓▓▒▓█▒██▓▓█▓▒█▒▒░░░▒▒▒▒▒▒░░░░░░\n" +
+                "▒▒▒▒▒▒▒▓▓▓▒███▓▒░▒▒▓░░░█▓░▒░▒▓▒▓█████████▓███▓▓▓▓▓▓█▓▓█▓▓█▒▓▓▓████████▓█▒▒▓▓▓▓█▒▓░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                "▒▓▒▒▒▒▒░▒░▒▒██░░░░░▒▒░▒▒▓▓▓▒█▒▓██▓▓▒▓██▒█▓▓█▓▓▓█▓▓▓█▓█▓▓█▓▒▓▓▒█░░█░▓▓▓▓▓▓▒▓▓█▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                "▓▓▓▓▓▓▓▓▒▓▓▒▓█▓▓█▒▓▓██████▓▓▓█▓▓▓▓▓██▓███▓█▓▓▓█▓▓▓▓▓▒▒▓▓▓▓▒▓▓▒▓▓██░▒▓▓▓▓▒▒▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                "▓▒▒▓▓▒▓▓▓▓▓▓████▒███████▓█▓▓█▒▒▓▓▓▓▓▒▒███████▒███▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▓▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                "▒▒▒▒▒▒▒▒▓▒█████▓▓▓█▓███▓▓▒█▒█▒▒░██▓█▒█▓█▓▓▓▒▒▓▓▒▒▒▒▒▒▒▒░█▓▓██▒▓▓▒▒▒▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                "▒▒▒▒▒▒▒▓▓▓█▓███████▓▓▓█▓▓▒▓██▓█▓▓▓██▓▓▓▓░████▓███▒█▓██▓▓█▓██▓▓█▓▓▓▓▓▓▓░▒▓▓▓▓▓▒▒▒▒▒▓▓▓▓▓▒▓▓▓██▓░▒▒▒▓▒\n" +
+                "▓▒▓▓▒▒▓▓▓██▓▓▓▓█████▒░▒▒▒▒▒▒▓▓█▓▓▓▓▒█▓░██████████▒█▓▓▒▓▒▓▓▓▒▒▒▒▒▒▒▒▓▒▓▓▓▓▒▓▓▒▓▓▒▒▒▒▒▓▓▓▒▓▓▒▒▒▓▒▓▓▓▓▓\n" +
+                "▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███████▒▒▒▒▓▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓█████▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▓▓▓▓▒▓▓▒▓▓▓▓▓▒▓▓▓▓▓▓\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▒▒▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                "▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
+        //https://www.asciiart.eu/image-to-ascii
+    }
+    public static void t00000(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X#####|                                                  |/////X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X#####|                                                  ||||||X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X%%%%%|                                                  ||||||X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t00001(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------ ***                                              ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------       ****                                       ------X\n" +
+                "X#####|           ***                                    |/////X\n" +
+                "X------              ***                                 ------X\n" +
+                "X                       ***                                    X\n" +
+                "X------                    ***                           ------X\n" +
+                "X#####|                       ****                       ||||||X\n" +
+                "X------                           ***                    ------X\n" +
+                "X                                    ***                       X\n" +
+                "X------                                 ***              ------X\n" +
+                "X%%%%%|                                    ***           ||||||X\n" +
+                "X------                                       ****       ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                              *** ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t00010(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X#####*******                                            |/////X\n" +
+                "X------      *************                               ------X\n" +
+                "X                         ************                         X\n" +
+                "X------                               *************      ------X\n" +
+                "X#####|                                            *******|||||X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X%%%%%|                                                  ||||||X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t00011(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------ ***                                              ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------       ****                                       ------X\n" +
+                "X#####*******     ***                                    |/////X\n" +
+                "X------      *************                               ------X\n" +
+                "X                       **************                         X\n" +
+                "X------                    ***        *************      ------X\n" +
+                "X#####|                       ****                 *******|||||X\n" +
+                "X------                           ***                    ------X\n" +
+                "X                                    ***                       X\n" +
+                "X------                                 ***              ------X\n" +
+                "X%%%%%|                                    ***           ||||||X\n" +
+                "X------                                       ****       ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                              *** ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t00100(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X#####|                                                  |/////X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X#####*******                                            ||||||X\n" +
+                "X------      *************                               ------X\n" +
+                "X                         ************                         X\n" +
+                "X------                               *************      ------X\n" +
+                "X%%%%%|                                            *******|||||X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t00101(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------ ***                                              ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------       ****                                       ------X\n" +
+                "X#####|           ***                                    |/////X\n" +
+                "X------              ***                                 ------X\n" +
+                "X                       ***                                    X\n" +
+                "X------                    ***                           ------X\n" +
+                "X#####*******                 ****                       ||||||X\n" +
+                "X------      *************        ***                    ------X\n" +
+                "X                         **************                       X\n" +
+                "X------                               *************      ------X\n" +
+                "X%%%%%|                                    ***     *******|||||X\n" +
+                "X------                                       ****       ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                              *** ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t00110(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X#####*******                                            |/////X\n" +
+                "X------      *************                               ------X\n" +
+                "X                         ************                         X\n" +
+                "X------                               *************      ------X\n" +
+                "X#####*******                                      *******|||||X\n" +
+                "X------      *************                               ------X\n" +
+                "X                         ************                         X\n" +
+                "X------                               *************      ------X\n" +
+                "X%%%%%|                                            *******|||||X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t00111(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------ ***                                              ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------       ****                                       ------X\n" +
+                "X#####*******     ***                                    |/////X\n" +
+                "X------      *************                               ------X\n" +
+                "X                       **************                         X\n" +
+                "X------                    ***        *************      ------X\n" +
+                "X#####*******                 ****                 *******|||||X\n" +
+                "X------      *************        ***                    ------X\n" +
+                "X                         **************                       X\n" +
+                "X------                               *************      ------X\n" +
+                "X%%%%%|                                    ***     *******|||||X\n" +
+                "X------                                       ****       ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                              *** ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t01000(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X#####|                                               ****/////X\n" +
+                "X------                                         ******   ------X\n" +
+                "X                                         ******               X\n" +
+                "X------                            *******               ------X\n" +
+                "X#####|                      ******                      ||||||X\n" +
+                "X------               *******                            ------X\n" +
+                "X               ******                                         X\n" +
+                "X------   ******                                         ------X\n" +
+                "X%%%%%****                                               ||||||X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t01001(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------ ***                                              ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------       ****                                       ------X\n" +
+                "X#####|           ***                                 ****/////X\n" +
+                "X------              ***                        ******   ------X\n" +
+                "X                       ***               ******               X\n" +
+                "X------                    ***     *******               ------X\n" +
+                "X#####|                      ******                      ||||||X\n" +
+                "X------               *******     ***                    ------X\n" +
+                "X               ******               ***                       X\n" +
+                "X------   ******                        ***              ------X\n" +
+                "X%%%%%****                                 ***           ||||||X\n" +
+                "X------                                       ****       ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                              *** ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t01010(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X#####*******                                         ****/////X\n" +
+                "X------      *************                      ******   ------X\n" +
+                "X                         ************    ******               X\n" +
+                "X------                            ****************      ------X\n" +
+                "X#####|                      ******                *******|||||X\n" +
+                "X------               *******                            ------X\n" +
+                "X               ******                                         X\n" +
+                "X------   ******                                         ------X\n" +
+                "X%%%%%****                                               ||||||X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t01011(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------ ***                                              ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------       ****                                       ------X\n" +
+                "X#####*******     ***                                 ****/////X\n" +
+                "X------      *************                      ******   ------X\n" +
+                "X                       **************    ******               X\n" +
+                "X------                    ***     ****************      ------X\n" +
+                "X#####|                      ******                *******|||||X\n" +
+                "X------               *******     ***                    ------X\n" +
+                "X               ******               ***                       X\n" +
+                "X------   ******                        ***              ------X\n" +
+                "X%%%%%****                                 ***           ||||||X\n" +
+                "X------                                       ****       ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                              *** ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t01100(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X#####|                                               ****/////X\n" +
+                "X------                                         ******   ------X\n" +
+                "X                                         ******               X\n" +
+                "X------                            *******               ------X\n" +
+                "X#####*******                ******                      ||||||X\n" +
+                "X------      ****************                            ------X\n" +
+                "X               ******    ************                         X\n" +
+                "X------   ******                      *************      ------X\n" +
+                "X%%%%%****                                         *******|||||X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t01101(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------ ***                                              ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------       ****                                       ------X\n" +
+                "X#####|           ***                                 ****/////X\n" +
+                "X------              ***                        ******   ------X\n" +
+                "X                       ***               ******               X\n" +
+                "X------                    ***     *******               ------X\n" +
+                "X#####*******                ******                      ||||||X\n" +
+                "X------      ****************     ***                    ------X\n" +
+                "X               ******    **************                       X\n" +
+                "X------   ******                      *************      ------X\n" +
+                "X%%%%%****                                 ***     *******|||||X\n" +
+                "X------                                       ****       ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                              *** ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t01110(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X#####*******                                         ****/////X\n" +
+                "X------      *************                      ******   ------X\n" +
+                "X                         ************    ******               X\n" +
+                "X------                            ****************      ------X\n" +
+                "X#####*******                ******                *******|||||X\n" +
+                "X------      ****************                            ------X\n" +
+                "X               ******    ************                         X\n" +
+                "X------   ******                      *************      ------X\n" +
+                "X%%%%%****                                         *******|||||X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                  |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t01111(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------ ***                                              ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------       ****                                       ------X\n" +
+                "X#####*******     ***                                 ****/////X\n" +
+                "X------      *************                      ******   ------X\n" +
+                "X                       **************    ******               X\n" +
+                "X------                    ***     ****************      ------X\n" +
+                "X#####*******                ******                *******|||||X\n" +
+                "X------      ****************     ***                    ------X\n" +
+                "X               ******    **************                       X\n" +
+                "X------   ******                      *************      ------X\n" +
+                "X%%%%%****                                 ***     *******|||||X\n" +
+                "X------                                       ****       ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                              *** ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t10000(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                              *** ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                       ****       ------X\n" +
+                "X#####|                                    ***           |/////X\n" +
+                "X------                                 ***              ------X\n" +
+                "X                                    ***                       X\n" +
+                "X------                           ***                    ------X\n" +
+                "X#####|                       ****                       ||||||X\n" +
+                "X------                    ***                           ------X\n" +
+                "X                       ***                                    X\n" +
+                "X------              ***                                 ------X\n" +
+                "X%%%%%|           ***                                    ||||||X\n" +
+                "X------       ****                                       ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------ ***                                              ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t10001(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X#####|           ***                      ***           |/////X\n" +
+                "X------              ***                ***              ------X\n" +
+                "X                       ***          ***                       X\n" +
+                "X------                    ***    ***                    ------X\n" +
+                "X#####|                       ****                       ||||||X\n" +
+                "X------                    ***    ***                    ------X\n" +
+                "X                       ***          ***                       X\n" +
+                "X------              ***                ***              ------X\n" +
+                "X%%%%%|           ***                      ***           ||||||X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t10010(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                              *** ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                       ****       ------X\n" +
+                "X#####*******                              ***           |/////X\n" +
+                "X------      *************              ***              ------X\n" +
+                "X                         **************                       X\n" +
+                "X------                           *** *************      ------X\n" +
+                "X#####|                       ****                 *******|||||X\n" +
+                "X------                    ***                           ------X\n" +
+                "X                       ***                                    X\n" +
+                "X------              ***                                 ------X\n" +
+                "X%%%%%|           ***                                    ||||||X\n" +
+                "X------       ****                                       ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------ ***                                              ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t10011(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X#####*******     ***                      ***           |/////X\n" +
+                "X------      *************              ***              ------X\n" +
+                "X                       ****************                       X\n" +
+                "X------                    ***    *** *************      ------X\n" +
+                "X#####|                       ****                 *******|||||X\n" +
+                "X------                    ***    ***                    ------X\n" +
+                "X                       ***          ***                       X\n" +
+                "X------              ***                ***              ------X\n" +
+                "X%%%%%|           ***                      ***           ||||||X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t10100(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                              *** ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                       ****       ------X\n" +
+                "X#####|                                    ***           |/////X\n" +
+                "X------                                 ***              ------X\n" +
+                "X                                    ***                       X\n" +
+                "X------                           ***                    ------X\n" +
+                "X#####*******                 ****                       ||||||X\n" +
+                "X------      ************* ***                           ------X\n" +
+                "X                       **************                         X\n" +
+                "X------              ***              *************      ------X\n" +
+                "X%%%%%|           ***                              *******|||||X\n" +
+                "X------       ****                                       ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------ ***                                              ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t10101(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X#####|           ***                      ***           |/////X\n" +
+                "X------              ***                ***              ------X\n" +
+                "X                       ***          ***                       X\n" +
+                "X------                    ***    ***                    ------X\n" +
+                "X#####*******                 ****                       ||||||X\n" +
+                "X------      ************* ***    ***                    ------X\n" +
+                "X                       ****************                       X\n" +
+                "X------              ***              *************      ------X\n" +
+                "X%%%%%|           ***                      ***     *******|||||X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t10110(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                              *** ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                       ****       ------X\n" +
+                "X#####*******                              ***           |/////X\n" +
+                "X------      *************              ***              ------X\n" +
+                "X                         **************                       X\n" +
+                "X------                           *** *************      ------X\n" +
+                "X#####*******                 ****                 *******|||||X\n" +
+                "X------      ************* ***                           ------X\n" +
+                "X                       **************                         X\n" +
+                "X------              ***              *************      ------X\n" +
+                "X%%%%%|           ***                              *******|||||X\n" +
+                "X------       ****                                       ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------ ***                                              ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t10111(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X#####*******     ***                      ***           |/////X\n" +
+                "X------      *************              ***              ------X\n" +
+                "X                       ****************                       X\n" +
+                "X------                    ***    *** *************      ------X\n" +
+                "X#####*******                 ****                 *******|||||X\n" +
+                "X------      ************* ***    ***                    ------X\n" +
+                "X                       ****************                       X\n" +
+                "X------              ***              *************      ------X\n" +
+                "X%%%%%|           ***                      ***     *******|||||X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t11000(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                              *** ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                       ****       ------X\n" +
+                "X#####|                                    ***        ****/////X\n" +
+                "X------                                 ***     ******   ------X\n" +
+                "X                                    ***  ******               X\n" +
+                "X------                           ********               ------X\n" +
+                "X#####|                      ******                      ||||||X\n" +
+                "X------               ********                           ------X\n" +
+                "X               ******  ***                                    X\n" +
+                "X------   ******     ***                                 ------X\n" +
+                "X%%%%%****        ***                                    ||||||X\n" +
+                "X------       ****                                       ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------ ***                                              ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t11001(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X#####|           ***                      ***        ****/////X\n" +
+                "X------              ***                ***     ******   ------X\n" +
+                "X                       ***          ***  ******               X\n" +
+                "X------                    ***    ********               ------X\n" +
+                "X#####|                      ******                      ||||||X\n" +
+                "X------               ********    ***                    ------X\n" +
+                "X               ******  ***          ***                       X\n" +
+                "X------   ******     ***                ***              ------X\n" +
+                "X%%%%%****        ***                      ***           ||||||X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t11010(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                              *** ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                       ****       ------X\n" +
+                "X#####*******                              ***        ****|||||X\n" +
+                "X------      *************              ***     ******   ------X\n" +
+                "X                         **************  ******               X\n" +
+                "X------                           *****************      ------X\n" +
+                "X#####|                      ******                *******|||||X\n" +
+                "X------               ********                           ------X\n" +
+                "X               ******  ***                                    X\n" +
+                "X------   ******     ***                                 ------X\n" +
+                "X%%%%%****        ***                                    ||||||X\n" +
+                "X------       ****                                       ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------ ***                                              ------X\n" +
+                "X?????**                                                 |?????X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t11011(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X#####*******     ***                      ***        ****/////X\n" +
+                "X------      *************              ***     ******   ------X\n" +
+                "X                       ****************  ******               X\n" +
+                "X------                    ***    *****************      ------X\n" +
+                "X#####|                      ******                *******|||||X\n" +
+                "X------               ********    ***                    ------X\n" +
+                "X               ******  ***          ***                       X\n" +
+                "X------   ******     ***                ***              ------X\n" +
+                "X%%%%%****        ***                      ***           ||||||X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t11100(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                              *** ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                       ****       ------X\n" +
+                "X#####|                                    ***        ****/////X\n" +
+                "X------                                 ***     ******   ------X\n" +
+                "X                                    ***  ******               X\n" +
+                "X------                           ********               ------X\n" +
+                "X#####*******                ******                      ||||||X\n" +
+                "X------      *****************                           ------X\n" +
+                "X               ******  **************                         X\n" +
+                "X------   ******     ***              *************      ------X\n" +
+                "X%%%%%****        ***                              *******|||||X\n" +
+                "X------       ****                                       ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------ ***                                              ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t11101(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X#####|           ***                      ***        ****/////X\n" +
+                "X------              ***                ***     ******   ------X\n" +
+                "X                       ***          ***  ******               X\n" +
+                "X------                    ***    ********               ------X\n" +
+                "X#####*******                ******                      ||||||X\n" +
+                "X------      *****************    ***                    ------X\n" +
+                "X               ******  ****************                       X\n" +
+                "X------   ******     ***              *************      ------X\n" +
+                "X%%%%%****        ***                      ***     *******|||||X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t11110(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????|                                                 **!!!!!X\n" +
+                "X------                                              *** ------X\n" +
+                "X                                                 ***          X\n" +
+                "X------                                       ****       ------X\n" +
+                "X#####*******                              ***        ****/////X\n" +
+                "X------      *************              ***     ******   ------X\n" +
+                "X                         **************  ******               X\n" +
+                "X------                           *****************      ------X\n" +
+                "X#####*******                ******                *******|||||X\n" +
+                "X------      *****************                           ------X\n" +
+                "X               ******  **************                         X\n" +
+                "X------   ******     ***              *************      ------X\n" +
+                "X%%%%%****        ***                              *******|||||X\n" +
+                "X------       ****                                       ------X\n" +
+                "X          ***                                                 X\n" +
+                "X------ ***                                              ------X\n" +
+                "X?????**                                                 |!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void t11111(Scanner scan){
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X#####*******     ***                      ***        ****/////X\n" +
+                "X------      *************              ***     ******   ------X\n" +
+                "X                       ****************  ******               X\n" +
+                "X------                    ***    *****************      ------X\n" +
+                "X#####*******                ******                *******|||||X\n" +
+                "X------      *****************    ***                    ------X\n" +
+                "X               ******  ****************                       X\n" +
+                "X------   ******     ***              *************      ------X\n" +
+                "X%%%%%****        ***                      ***     *******|||||X\n" +
+                "X------       ****                            ****       ------X\n" +
+                "X          ***                                    ***          X\n" +
+                "X------ ***                                          *** ------X\n" +
+                "X?????**                                                **!!!!!X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    }
+    public static void explode(Scanner scan){
+        System.out.println("          _ ._  _ , _ ._\n" +
+                "        (_ ' ( `  )_  .__)\n" +
+                "      ( (  (    )   `)  ) _)\n" +
+                "     (__ (_   (_ . _) _) ,__)\n" +
+                "         `~~`\\ ' . /`~~`\n" +
+                "              ;   ;\n" +
+                "              /   \\\n" +
+                "_____________/_ __ \\_____________");
     }
 }
