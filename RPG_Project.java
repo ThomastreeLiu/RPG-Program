@@ -721,6 +721,8 @@ public class RPG_Project {
                 System.out.println("*\nYou got the achievement Kill Assist");
             }
             task3t=task3t+1;
+            System.out.println("Press anykey to continue.");
+            anykey=scan.next();
         }
         else {
             System.out.println("You dismantle the bomb successfully");
@@ -737,10 +739,10 @@ public class RPG_Project {
                 achievement=achievement+200;
             }
             task3t=task3t+1;
+            System.out.println("Press anykey to continue.");
+            anykey=scan.next();
+            conclusion(scan);
         }
-        System.out.println("Press anykey to continue.");
-        anykey=scan.next();
-        conclusion(scan);
     }
 
     public static void conclusion(Scanner scan) {
