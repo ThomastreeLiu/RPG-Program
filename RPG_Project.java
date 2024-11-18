@@ -12,6 +12,7 @@ public class RPG_Project {
     private static int timesb = 0;
     private static int task2con = 0;
     private static int task3t = 0;
+    private static int lost = 0;
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (con == 1) {
@@ -66,6 +67,19 @@ public class RPG_Project {
         while ((process%100)%10==0&&quit.equals("n")){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.println("\n" +
+                    "\n" +
+                    " _____         _      _                  \n" +
+                    "|_   _|_ _ ___| | __ / |                 \n" +
+                    "  | |/ _` / __| |/ / | |                 \n" +
+                    "  | | (_| \\__ \\   <  | |                 \n" +
+                    " _|_|\\__,_|___/_|\\_\\ |_|   _____     _ _ \n" +
+                    "| \\ | (_) __ _| |__ | |_  |  ___|_ _| | |\n" +
+                    "|  \\| | |/ _` | '_ \\| __| | |_ / _` | | |\n" +
+                    "| |\\  | | (_| | | | | |_  |  _| (_| | | |\n" +
+                    "|_| \\_|_|\\__, |_| |_|\\__| |_|  \\__,_|_|_|\n" +
+                    "         |___/                           \n" +
+                    "\n\n");
             System.out.println("1941, Europe.\n" +
                     "Nazi Germany invade most country in west europe. Now they aim their goal to British, \n" +
                     "but Royal air force and Royal navy block them in east coast of atlantic ocean. \n" +
@@ -157,6 +171,7 @@ public class RPG_Project {
                         "You been shoot down by 20mm cannon, The shell broke your wing and your plane \n" +
                         "crash into the sea. The investigation result of German are going to attack British \n" +
                         "won't send to British anymore. ");
+                lost=lost+1;
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -312,6 +327,18 @@ public class RPG_Project {
 
         }
         while (aga==1&&task3t==0&&con==1||aga==1&&tra==1&&con==1) {
+            System.out.println("\n" +
+                    "\n" +
+                    " _____         _      _____                         \n" +
+                    "|_   _|_ _ ___| | __ |___ /                         \n" +
+                    "  | |/ _` / __| |/ /   |_ \\                         \n" +
+                    "  | | (_| \\__ \\   <   ___) |                        \n" +
+                    "  |_|\\__,_|___/_|\\_\\ |____/               _   _     \n" +
+                    "   / \\   / _| |_ ___ _ __ _ __ ___   __ _| |_| |__  \n" +
+                    "  / _ \\ | |_| __/ _ \\ '__| '_ ` _ \\ / _` | __| '_ \\ \n" +
+                    " / ___ \\|  _| ||  __/ |  | | | | | | (_| | |_| | | |\n" +
+                    "/_/   \\_\\_|  \\__\\___|_|  |_| |_| |_|\\__,_|\\__|_| |_|\n" +
+                    "\n");
             System.out.println("You are a Royal Engineers, people like you don't kill in the air like these pilots, but " +
                     "\nyou also have important missions on you:dismantling the bomb didn't explode or have delay fuse.");
             System.out.println("Here is the bomb dismantling guidebook:\nThe bomb control panel looks like this:\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
@@ -716,6 +743,7 @@ public class RPG_Project {
         }
         if (exp==1){
             System.out.println("You die because the bomb explosion, remember, follow the guidebook.");
+            lost=lost+1;
             if (task3t==0&&achievement-achievement%100==0||task3t==0&&achievement-achievement%100==200){
                 achievement=achievement+100;
                 System.out.println("*\nYou got the achievement Kill Assist");
@@ -741,8 +769,16 @@ public class RPG_Project {
             task3t=task3t+1;
             System.out.println("Press anykey to continue.");
             anykey=scan.next();
-            conclusion(scan);
+            if (lost<2)
+                conclusion(scan);
+            else
+                conclusionl(scan);
         }
+    }
+
+    private static void conclusionl(Scanner scan) {
+        System.out.println("You lost this battle personally, but you are not alone, the whole country,\n" +
+                "the whole world are helping you, a defeated warrior is still a warrior.");
     }
 
     public static void conclusion(Scanner scan) {
@@ -781,6 +817,7 @@ public class RPG_Project {
                 "| |_) | |  | | |_| \\__ \\ | | |                           \n" +
                 "|____/|_|  |_|\\__|_|___/_| |_|                           \n" +
                 "\n");
+        System.out.println("Author:Thomastree");
 
         System.out.println("1.Nightfall");
         if (process%100%10==6||process%100%10==8)
@@ -864,6 +901,19 @@ public class RPG_Project {
         String con = "y";
         int i = 0;
         if (task2con==1) {
+            System.out.println("\n" +
+                    "\n" +
+                    " _____         _      ____                   \n" +
+                    "|_   _|_ _ ___| | __ |___ \\                  \n" +
+                    "  | |/ _` / __| |/ /   __) |                 \n" +
+                    "  | | (_| \\__ \\   <   / __/                  \n" +
+                    " _|_|\\__,_|___/_|\\_\\ |_____|   _             \n" +
+                    "| ____|__ _  __ _| | ___    __| | __ _ _   _ \n" +
+                    "|  _| / _` |/ _` | |/ _ \\  / _` |/ _` | | | |\n" +
+                    "| |__| (_| | (_| | |  __/ | (_| | (_| | |_| |\n" +
+                    "|_____\\__,_|\\__, |_|\\___|  \\__,_|\\__,_|\\__, |\n" +
+                    "            |___/                      |___/ \n" +
+                    "\n");
             System.out.println("                          XXX                         XXXXXXXX    Ammo:480      \n" +
                     "                      XXXXX  XXXXXXXXXXXXXXXXXXXXXXXXX       XXX                \n" +
                     "                  XXXXX      X                       X         XX               \n" +
@@ -896,10 +946,12 @@ public class RPG_Project {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            System.out.println("Press any key");
+            anykey=scan.next();
             System.out.println("\n\n\n\n\n\n\n\n\n\n");
             System.out.println("Remember, the velocity of cannon bullets are slow compare to the speed of \n" +
                     "plane and its distance, so make sure you aim the path of enemy aircraft to be passed \n" +
-                    "instead aircraft itselves. ");
+                    "instead aircraft it selves. ");
             System.out.println("               XXXXXXXXXXXXX               \n" +
                     "          XXXXX      X      XXXXX          \n" +
                     "        XX           X           XX        \n" +
@@ -1006,6 +1058,7 @@ public class RPG_Project {
             if (planeb < 0) {
                 process = process + 50;
                 System.out.println("You been shoot down. Try this task again.");
+                lost=lost+1;
                 if ((achievement - achievement % 10) % 100 == 0 || (achievement - achievement % 10) % 100 == 10 ||
                         (achievement - achievement % 10) % 100 == 40 || (achievement - achievement % 10) % 100 == 50) {
                     achievement = achievement + 20;
@@ -1020,6 +1073,7 @@ public class RPG_Project {
                     achievement = achievement + 10;
                     System.out.println("You got the achievement:Airborne Sniper");
                 }
+                task2finish(scan);
                 con="n";
             }
             System.out.println("Press any key to continue");
@@ -1055,9 +1109,11 @@ public class RPG_Project {
             if (planeb < 0) {
                 process = process + 50;
                 System.out.println("You been shoot down. Try this task again.");
+                lost=lost+1;
                 con="n";
             } else if (planea < 0) {
                 System.out.println("You win this time, average royal airforce pilot.");
+                task2finish(scan);
                 process = process + 20;
                 con="n";
             }
@@ -1094,9 +1150,11 @@ public class RPG_Project {
             if (planeb < 0) {
                 process = process + 50;
                 System.out.println("You been shoot down. Try this task again.");
+                lost=lost+1;
                 con="n";
             } else if (planea < 0) {
                 System.out.println("You win this time, average royal airforce pilot.");
+                task2finish(scan);
                 process = process + 30;
                 con="n";
             }
@@ -1131,9 +1189,11 @@ public class RPG_Project {
             if (planeb < 0) {
                 process = process + 50;
                 System.out.println("You been shoot down. Try this task again.");
+                lost=lost+1;
                 con="n";
             } else if (planea < 0) {
                 System.out.println("You win this time, average royal airforce pilot.");
+                task2finish(scan);
                 process = process + 40;
                 con="n";
             }
@@ -1149,6 +1209,20 @@ public class RPG_Project {
             con="n";
         }
 
+    }
+    public static void task2finish(Scanner scan){
+        System.out.println("\n" +
+                "\n" +
+                " _____         _      ____  \n" +
+                "|_   _|_ _ ___| | __ |___ \\ \n" +
+                "  | |/ _` / __| |/ /   __) |\n" +
+                "  | | (_| \\__ \\   <   / __/ \n" +
+                " _|_|\\__,_|___/_|\\_\\ |_____|\n" +
+                "|  ___(_)_ __ (_)___| |__   \n" +
+                "| |_  | | '_ \\| / __| '_ \\  \n" +
+                "|  _| | | | | | \\__ \\ | | | \n" +
+                "|_|   |_|_| |_|_|___/_| |_| \n" +
+                "\n");
     }
     public static void fight1(Scanner scan){
         System.out.println("                                XXX        XX    ammo=480\n" +
@@ -1273,7 +1347,7 @@ public class RPG_Project {
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             if (choise.equals("q")) {
                 conA = 0;
-                System.out.println("Press anykey to continue");
+                System.out.println("Press any key to continue");
             }
             else if (choise.equals("1")) {
                 if (achievement%10==1||achievement%10==3||achievement%10==5||achievement%10==7)
@@ -1312,7 +1386,7 @@ public class RPG_Project {
             }
             else if (choise.equals("6")) {
                 if ((achievement-achievement%10)%100==40||(achievement-achievement%10)%100==50||(achievement-achievement%10)%100==60||(achievement-achievement%10)%100==70)
-                    System.out.println("Both of you and your enemy out of ammo and did't even shoot down one plane");
+                    System.out.println("Both of you and your enemy out of ammo and didn't even shoot down one plane");
                 else
                     System.out.println("You can get it in task 2");
                 System.out.println("Press any key to continue.");
