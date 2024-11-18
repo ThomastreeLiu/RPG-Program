@@ -824,14 +824,14 @@ public class RPG_Project {
             Achievement(scan);
         }
         else if (select == 5) {
-            System.out.println("Your game code is "+(process+achievement*1000)+", enter that in selection 6 to continue your game");
+            System.out.println("Your game code is "+(process+(achievement+100)*1000)+", enter that in selection 6 to continue your game");
             System.out.println("Press any key");
             anykey=scan.next();
         }
         else if (select == 6) {
             System.out.println("Enter your game code");
             int num = scan.nextInt();
-            process=num%1000;
+            process=num%1000-100;
             achievement=(num-num%1000)/1000;
         }
         else if (select == 7) {
@@ -1261,7 +1261,7 @@ public class RPG_Project {
         while (conA==1) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-            System.out.println("1.Knights of old\n2.Live for fight another day\n3.Flee in a dilemma\n4.Jinx" +
+            System.out.println("1.Knights of old\n2.Flee in a dilemma\n3.Live for fight another day\n4.Jinx" +
                     "\n5.Airborne Sniper\n6.Cadet\n7.Kill Assist\n8.Advanced engineer");
             System.out.println("Achievement(" + num + "/8)");
             System.out.println("Show detail by enter the number.");
@@ -1269,8 +1269,10 @@ public class RPG_Project {
             String choise = scan.next();
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-            if (choise.equals("q"))
-                conA=0;
+            if (choise.equals("q")) {
+                conA = 0;
+                System.out.println("Press anykey to continue");
+            }
             else if (choise.equals("1")) {
                 if (achievement%10==1||achievement%10==3||achievement%10==5||achievement%10==7)
                     System.out.println("You have the spirit of chivalry, but this is World War II, an evil and brutal war.");
