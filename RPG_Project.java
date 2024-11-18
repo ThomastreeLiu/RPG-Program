@@ -281,14 +281,47 @@ public class RPG_Project {
 
 
     public static void task3(Scanner scan) {
-
-
-        System.out.println("\nThis is the task three.");
-        if (process%100==13)
-            process=process+100;
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("You are a Royal Engineers, people like you don't kill in the air like these pilots, but " +
+                "\nyou also have important missions on you:dismantling the bomb didn't explode or have delay fuse.");
+        System.out.println("Here is the bomb dismantling guidebook:\nThe bomb control panel looks like this:\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X     |                                                  |     X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X     |                                                  |     X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X     |                                                  |     X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X     |                                                  |     X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X------                                                  ------X\n" +
+                "X     |                                                  |     X\n" +
+                "X------                                                  ------X\n" +
+                "X                                                              X\n" +
+                "X                                                              X\n" +
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                "There is 10 terminals in both sides, each side has 5 terminals. The terminals will filled by characters in real bomb.");
+        System.out.println("Press any key to continue");
+        anykey=scan.next();
+        System.out.println("By the sacrifice of dozens of sappers, we make this guidebook to help engineers to dismantling\n" +
+                "bombs. Here is the rule:");
+        System.out.println("press any key to continue");
+        anykey=scan.next();
+        System.out.println("");
     }
 
     private static void conclusion(Scanner scan) {
+
         System.out.println("you have done the game, good job.");
     }
 
@@ -855,6 +888,9 @@ public class RPG_Project {
                 "                       XXXXXX      X     X \n" +
                 "                                    XXXXX  ");
         //https://www.asciiart.eu/image-to-ascii
+    }
+    public static void emp(Scanner scan){
+
     }
     public static void Achievement(Scanner scan){
         int num = 0;
