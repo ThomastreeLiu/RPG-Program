@@ -7,6 +7,7 @@ public class RPG_Project {
     private static int timesa = 0;
     private static int timesb = 0;
     private static int task2con = 0;
+    private static int task3t = 0;
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (con == 1) {
@@ -281,43 +282,71 @@ public class RPG_Project {
 
 
     public static void task3(Scanner scan) {
+        int aga = 0;
+        int tra = 0;
+        int con = 0;
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        System.out.println("You are a Royal Engineers, people like you don't kill in the air like these pilots, but " +
-                "\nyou also have important missions on you:dismantling the bomb didn't explode or have delay fuse.");
-        System.out.println("Here is the bomb dismantling guidebook:\nThe bomb control panel looks like this:\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "X                                                              X\n" +
-                "X                                                              X\n" +
-                "X------                                                  ------X\n" +
-                "X     |                                                  |     X\n" +
-                "X------                                                  ------X\n" +
-                "X                                                              X\n" +
-                "X------                                                  ------X\n" +
-                "X     |                                                  |     X\n" +
-                "X------                                                  ------X\n" +
-                "X                                                              X\n" +
-                "X------                                                  ------X\n" +
-                "X     |                                                  |     X\n" +
-                "X------                                                  ------X\n" +
-                "X                                                              X\n" +
-                "X------                                                  ------X\n" +
-                "X     |                                                  |     X\n" +
-                "X------                                                  ------X\n" +
-                "X                                                              X\n" +
-                "X------                                                  ------X\n" +
-                "X     |                                                  |     X\n" +
-                "X------                                                  ------X\n" +
-                "X                                                              X\n" +
-                "X                                                              X\n" +
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
-                "There is 10 terminals in both sides, each side has 5 terminals. The terminals will filled by characters in real bomb.");
-        System.out.println("Press any key to continue");
-        anykey=scan.next();
-        System.out.println("By the sacrifice of dozens of sappers, we make this guidebook to help engineers to dismantling\n" +
-                "bombs. Here is the rule:");
-        System.out.println("press any key to continue");
-        anykey=scan.next();
-        System.out.println("");
+        if (task3t>0){
+            System.out.println("You have finish this task, you want to:\n1.Try the task again with tutorial\n2.Try the task again without tutorial\n" +
+                    "3.quit the task\nEnter your choise in number.");
+            anykey=scan.next();
+            if (anykey.equals(1))
+                tra = 1;
+            else if (anykey.equals(2));
+            else
+                con=0;
+
+        }
+        while (aga==0&&task3t==0||aga==0&&tra==1) {
+            System.out.println("You are a Royal Engineers, people like you don't kill in the air like these pilots, but " +
+                    "\nyou also have important missions on you:dismantling the bomb didn't explode or have delay fuse.");
+            System.out.println("Here is the bomb dismantling guidebook:\nThe bomb control panel looks like this:\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                    "X                                                              X\n" +
+                    "X                                                              X\n" +
+                    "X------                                                  ------X\n" +
+                    "X     |                                                  |     X\n" +
+                    "X------                                                  ------X\n" +
+                    "X                                                              X\n" +
+                    "X------                                                  ------X\n" +
+                    "X     |                                                  |     X\n" +
+                    "X------                                                  ------X\n" +
+                    "X                                                              X\n" +
+                    "X------                                                  ------X\n" +
+                    "X     |                                                  |     X\n" +
+                    "X------                                                  ------X\n" +
+                    "X                                                              X\n" +
+                    "X------                                                  ------X\n" +
+                    "X     |                                                  |     X\n" +
+                    "X------                                                  ------X\n" +
+                    "X                                                              X\n" +
+                    "X------                                                  ------X\n" +
+                    "X     |                                                  |     X\n" +
+                    "X------                                                  ------X\n" +
+                    "X                                                              X\n" +
+                    "X                                                              X\n" +
+                    "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
+                    "There is 10 terminals in both sides, each side has 5 terminals. The terminals will filled by characters in real bomb.");
+            System.out.println("Press any key to continue");
+            anykey = scan.next();
+            System.out.println("By the sacrifice of dozens of sappers, we make this guidebook to help engineers to dismantling\n" +
+                    "bombs. Here is the rule:");
+            System.out.println("press any key to continue");
+            anykey = scan.next();
+            System.out.println("1.? terminal must be connect to ! terminal, if there's multiple way to connect, you need to make sure the path you connect are crossed.");
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("2.# terminal must be connect to | terminal, if there's multiple way to connect, you need to make sure the path you connect are parallel.");
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("3.? terminal can connect to any terminal, but if you connect it to the terminal should be connected with specific terminal, the bomb will explode.");
+        }
     }
 
     private static void conclusion(Scanner scan) {
