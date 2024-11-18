@@ -1293,14 +1293,14 @@ public class RPG_Project {
                 System.out.println("Press any key to continue.");
             }
             else if (choise.equals("4")) {
-                if ((achievement-achievement%10)%100==10||(achievement-achievement%10)%100==30||(achievement-achievement%10)%100==50||(achievement-achievement%10)%100==70)
+                if ((achievement-achievement%10)%100==20||(achievement-achievement%10)%100==30||(achievement-achievement%10)%100==60||(achievement-achievement%10)%100==70)
                     System.out.println("You been shoot down in the first round");
                 else
                     System.out.println("You can get it in task 2");
                 System.out.println("Press any key to continue.");
             }
             else if (choise.equals("5")) {
-                if ((achievement-achievement%10)%100==20||(achievement-achievement%10)%100==30||(achievement-achievement%10)%100==60||(achievement-achievement%10)%100==70)
+                if ((achievement-achievement%10)%100==10||(achievement-achievement%10)%100==30||(achievement-achievement%10)%100==50||(achievement-achievement%10)%100==70)
                     System.out.println("You shoot down the enemy in the first round");
                 else
                     System.out.println("You can get it in task 2");
