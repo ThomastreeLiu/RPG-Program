@@ -712,8 +712,8 @@ public class RPG_Project {
         }
         if (exp==1){
             System.out.println("You die because the bomb explosion, remember, follow the guidebook.");
-            if (task3t==0&&achievement-achievement%100==0||task3t==0&&achievement-achievement%100==100||task3t==0&&achievement-achievement%100==400){
-                achievement=achievement+200;
+            if (task3t==0&&achievement-achievement%100==0||task3t==0&&achievement-achievement%100==200){
+                achievement=achievement+100;
                 System.out.println("*\nYou got the achievement Kill Assist");
             }
             task3t=task3t+1;
@@ -728,9 +728,9 @@ public class RPG_Project {
                     "  | | (_| \\__ \\   < ___) | |  _| | | | | | \\__ \\ | | |\n" +
                     "  |_|\\__,_|___/_|\\_\\____/  |_|   |_|_| |_|_|___/_| |_|\n" +
                     "\n");
-            if (task3t==0&&achievement-achievement%100==0||task3t==0&&achievement-achievement%100==200||task3t==0&&achievement-achievement%100==500){
+            if (task3t==0&&achievement-achievement%100==0||task3t==0&&achievement-achievement%100==100){
                 System.out.println("*\nYou get the achievement Advanced Engineer");
-                achievement=achievement+100;
+                achievement=achievement+200;
             }
             task3t=task3t+1;
         }
@@ -1239,8 +1239,8 @@ public class RPG_Project {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("1.Knights of old\n2.Live for fight another day\n3.Flee in a dilemma\n4.Jinx" +
-                    "\n5.Airborne Sniper\n6.Cadet\n");
-            System.out.println("Achievement(" + num + "/9)");
+                    "\n5.Airborne Sniper\n6.Cadet\n7.Kill Assist\n8.Advanced engineer");
+            System.out.println("Achievement(" + num + "/8)");
             System.out.println("Show detail by enter the number.");
             System.out.println("press q for quit");
             String choise = scan.next();
@@ -1269,6 +1269,42 @@ public class RPG_Project {
                     System.out.println("You can get it in task 1");
                 System.out.println("Press any key to continue.");
             }
+            else if (choise.equals("4")) {
+                if ((achievement-achievement%10)%100==10||(achievement-achievement%10)%100==30||(achievement-achievement%10)%100==50||(achievement-achievement%10)%100==70)
+                    System.out.println("You been shoot down in the first round");
+                else
+                    System.out.println("You can get it in task 2");
+                System.out.println("Press any key to continue.");
+            }
+            else if (choise.equals("5")) {
+                if ((achievement-achievement%10)%100==20||(achievement-achievement%10)%100==30||(achievement-achievement%10)%100==60||(achievement-achievement%10)%100==70)
+                    System.out.println("You shoot down the enemy in the first round");
+                else
+                    System.out.println("You can get it in task 2");
+                System.out.println("Press any key to continue.");
+            }
+            else if (choise.equals("6")) {
+                if ((achievement-achievement%10)%100==40||(achievement-achievement%10)%100==50||(achievement-achievement%10)%100==60||(achievement-achievement%10)%100==70)
+                    System.out.println("Both of you and your enemy out of ammo and did't even shoot down one plane");
+                else
+                    System.out.println("You can get it in task 2");
+                System.out.println("Press any key to continue.");
+            }
+            else if (choise.equals("7")) {
+                if ((achievement-achievement%100)==100||(achievement-achievement%100)==300)
+                    System.out.println("The bomb explode in the first round you try.");
+                else
+                    System.out.println("You can get it in task 3");
+                System.out.println("Press any key to continue.");
+            }
+            else if (choise.equals("8")) {
+                if ((achievement-achievement%100)==200||(achievement-achievement%100)==300)
+                    System.out.println("You dismantle the bomb first time you try");
+                else
+                    System.out.println("You can get it in task 3");
+                System.out.println("Press any key to continue.");
+            }
+            anykey=scan.next();
         }
     }
     //terms under are materials, logically are not code.
