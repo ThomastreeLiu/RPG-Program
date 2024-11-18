@@ -736,11 +736,30 @@ public class RPG_Project {
         }
         System.out.println("Press anykey to continue.");
         anykey=scan.next();
+        conclusion(scan);
     }
 
-    private static void conclusion(Scanner scan) {
-
-        System.out.println("you have done the game, good job.");
+    public static void conclusion(Scanner scan) {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("This game commemorates all countries, collectives and individuals \n" +
+                "who resisted fascist forces during World War II");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Congratulations, today is still a peaceful day in Canada, but not around the world.\n" +
+                "The war are happening form Asia to Europe, from Europe to South America. The world are still \n" +
+                "under the cloud of fascism, the massacre of civilians are still happening in the corner of the world.\n" +
+                "Efforts still need to continue.");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("\nPress anykey");
+        anykey=scan.next();
     }
 
     public static void introduction(Scanner scan) {
@@ -768,7 +787,7 @@ public class RPG_Project {
             timesb=1;
         if (timesb==0)
             System.out.println(" (Not available now)\n");
-        System.out.println("\n\n4. Show the achieve  "+"5.Save the game"+"   6.Restore the game"+"   7.Test mode(all task will be available)" +
+        System.out.println("\n\n4. Show the achieve  "+"5.Save the game"+"   6.Restore the game"+"   7.Conclusion" +
                 "\n8.Exit the game");
         System.out.println("select the task and enter its number\nRemember, in all any key step, press q or Q to quit " +
                 "the task and back to menu.");
@@ -812,7 +831,7 @@ public class RPG_Project {
             achievement=(num-num%1000)/1000;
         }
         else if (select == 7) {
-            process = 7117;
+            conclusion(scan);
         }
         else if (select == 8) {
             con = 0;
