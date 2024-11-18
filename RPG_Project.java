@@ -1,3 +1,7 @@
+//Name:RPG project
+//Author:Thomas
+//Purpose:play the game to experience WWII.
+
 import java.util.*;
 public class RPG_Project {
     private static int process = 0;
