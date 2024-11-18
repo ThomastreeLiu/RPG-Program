@@ -1335,6 +1335,7 @@ public class RPG_Project {
         }
     }
     //terms under are materials, logically are not code.
+    //all materials below are from https://www.asciiart.eu/image-to-ascii
     public static void plane1(Scanner scan){
         System.out.println("                 `··``´   `                                                                     ´`  \n" +
                 "                        `                                                                           \n" +
