@@ -79,7 +79,8 @@ public class RPG_Project {
             }
         }
         //if you are in the middle of the task you will goes into this if, the game determine where you at by the process code,
-        //if your choose continue the process code won't do any change, but if you choose quit, the program
+        //if your choose continue the process code won't do any change, but if you choose quit, the program will keep your game code
+        //and quit by change the quit variable which talked before.
         while ((process%100)%10==0&&quit.equals("n")){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -108,6 +109,8 @@ public class RPG_Project {
                 quit="y";
             else
                 process = process + 1;
+            //this is the background introduction, you might find that most of the step will empty the screen by print blanks
+            //in the end, the process code will add 1 so the program will know that you finish this section.
         }
         while ((process%100)%10==1&&quit.equals("n")) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
@@ -122,6 +125,8 @@ public class RPG_Project {
             else
                 process = process + 1;
         }
+        //these section in task1 work similar, if you finish this section, the process code will add 1,when you quit the
+        //process code can help game find where you are.
 
         while ((process%100)%10==2&&quit.equals("n")) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
