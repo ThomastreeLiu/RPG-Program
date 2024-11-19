@@ -5,25 +5,38 @@
 import java.util.*;
 public class RPG_Project {
     private static int process = 0;
+    //record the step you are and steps you have gone
     private static int achievement = 0;
+    //record your achievement
     private static int con = 1;
+    //variables for exit the whole game
     private static String anykey;
+    //usually the anykey setion use this variable to continue
     private static int timesa = 0;
+    //record have you pass task1
     private static int timesb = 0;
+    //record have you pass task2
     private static int task2con = 0;
+    //because task2 is in two different method, they need this variable to know will you play or not
     private static int task3t = 0;
+    //this will record how many times you have played task3(for prerequisite of achievement in task3)
     private static int lost = 0;
+    //variables record how many time you die(if this is less than 2, you win. Or you lost)
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (con == 1) {
             introduction(scan);
         }
+        //explained in variables part.
         System.out.println("Thanks for playing");
     }
 
 
     public static void task1(Scanner scan) {
+        //This task is a decision game, players will choose 3 ways to escape from plane of nazi, one will be shoot down
+        //and the other 2 will survive. In this task you must survive to be available playing next task.
         String quit = "n";
+        //in anykey section in this task, press q or Q will make this variable became y, then it will quit this method and back to menu.
         if ((process%100)%10==4||(process%100)%10==6||(process%100)%10==8){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -41,6 +54,8 @@ public class RPG_Project {
                 throw new RuntimeException(e);
             }
         }
+        //the if above happened when you have finish this task, it will so changes on the process variable which is "process", if you want
+        //to play again the code of task1 which is the first digit will became 0.
         else if ((process%100)%10>0&&(process%100)%10<6||(process%100)%10==7) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -63,7 +78,8 @@ public class RPG_Project {
                 }
             }
         }
-
+        //if you are in the middle of the task you will goes into this if, the game determine where you at by the process code,
+        //if your choose continue the process code won't do any change, but if you choose quit, the program
         while ((process%100)%10==0&&quit.equals("n")){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
