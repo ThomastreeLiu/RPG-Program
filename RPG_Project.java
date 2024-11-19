@@ -307,6 +307,7 @@ public class RPG_Project {
 
     public static void task2(Scanner scan) {
         int cprocess = process-process%10;
+        //this variable is for a "pure" number of achievement for task2(because the code of task2 is in the second digit.)
         if (cprocess%100==10||cprocess%100==20||cprocess%100==30||cprocess%100==40){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -330,22 +331,30 @@ public class RPG_Project {
         else {
             task2con=1;
             testflight(scan);
+            //similar to the section in task1.
         }
     }
 
 
     public static void task3(Scanner scan) {
         int aga = 1;
+        //this is for record do you want to redo the training task
         int tra = 0;
+        //this record your
         int con = 1;
+        //record your quit select
         int exp = 0;
+        //record the times you play this task
         int l1=0;
         int l2=0;
         int l3=0;
         int l4=0;
         int l5=0;
+        //these lx above is to record the connections of left side
         int l =0;
+        //record your left input
         int r =0;
+        //record your right input
         int cona=0;
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -607,7 +616,7 @@ public class RPG_Project {
                 exp=1;
                 con=0;
             }
-
+            //line above is code finding is the bomb explode
             //panel show process
             if (con==1){
                 System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
@@ -811,11 +820,13 @@ public class RPG_Project {
     }
 
     private static void conclusionl(Scanner scan) {
+        //lost conclusion
         System.out.println("You lost this battle personally, but you are not alone, the whole country,\n" +
                 "the whole world are helping you, a defeated warrior is still a warrior.");
     }
 
     public static void conclusion(Scanner scan) {
+        //win conclusion
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println("This game commemorates all countries, collectives and individuals \n" +
@@ -837,7 +848,7 @@ public class RPG_Project {
         System.out.println("\nPress anykey");
         anykey=scan.next();
     }
-
+    //introduction is menu in this game
     public static void introduction(Scanner scan) {
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -870,6 +881,7 @@ public class RPG_Project {
                 "the task and back to menu.");
 
         int select = scan.nextInt();
+        //1,2,3 is section of task, other are settings of game.
         if (select == 1)
             task1(scan);
         else if (select == 2) {
@@ -897,6 +909,7 @@ public class RPG_Project {
             Achievement(scan);
         }
         else if (select == 5) {
+            //the game code is achievement code add process code.
             System.out.println("Your game code is "+(process+(achievement+100)*1000)+", enter that in selection 6 to continue your game");
             System.out.println("Press any key");
             anykey=scan.next();
@@ -932,8 +945,10 @@ public class RPG_Project {
         process=process-(process-process%10)%100;
         double planea=100;
         double planeb=100;
+        //set the hp for both side
         String con = "y";
         int i = 0;
+        //record the process(because process code are not fits in this task, dogfight can't pause or stop.)
         if (task2con==1) {
             System.out.println("\n" +
                     "\n" +
@@ -1066,6 +1081,7 @@ public class RPG_Project {
                     throw new RuntimeException(e);
                 }
                 con="n";
+                //similar with things above
             }
         }
         while (con.equals("y")&&i==0) {
@@ -1075,6 +1091,7 @@ public class RPG_Project {
             if (anykey.equals("1")) {
                 System.out.println("You hit him!");
                 planea = planea - Math.random() * 70 - 50;
+                //this is for find a random hp-.
             } else
                 System.out.println("You missed");
             try {
@@ -1084,6 +1101,7 @@ public class RPG_Project {
             }
             System.out.println("Enemy shoot");
             if (Math.random() > 0.5) {
+                //the possibility of enemy hit is 50%
                 System.out.println("Enemy hit!");
                 planeb = planeb - Math.random() * 70 - 50;
             } else
@@ -1116,7 +1134,7 @@ public class RPG_Project {
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             i++;
         }
-
+        //same as above
         while (con.equals("y")&&i==1) {
             fight2(scan);
             System.out.println("Choose your shooting window.");
@@ -1157,7 +1175,7 @@ public class RPG_Project {
                     "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             i++;
         }
-
+        //same as below
         while (con.equals("y")&&i==2) {
             fight3(scan);
             System.out.println("Choose your shooting window.");
@@ -1196,7 +1214,7 @@ public class RPG_Project {
             anykey = scan.next();
             i++;
         }
-
+        //same as below
         while (con.equals("y")&&i==3) {
             fight4(scan);
             System.out.println("Choose your shooting window.");
@@ -1258,6 +1276,7 @@ public class RPG_Project {
                 "|_|   |_|_| |_|_|___/_| |_| \n" +
                 "\n");
     }
+    //image for task3
     public static void fight1(Scanner scan){
         System.out.println("                                XXX        XX    ammo=480\n" +
                 "                                XX X    XXXXXXX  \n" +
@@ -1367,6 +1386,7 @@ public class RPG_Project {
             num=num+2;
         else if (achievement%10==7)
             num=num+3;
+        //lines above is to calculate the total number of achievement
         int conA = 1;
         while (conA==1) {
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
@@ -1440,6 +1460,7 @@ public class RPG_Project {
                 System.out.println("Press any key to continue.");
             }
             anykey=scan.next();
+            //introduction of achievement
         }
     }
     //terms under are materials, logically are not code.
@@ -1541,6 +1562,7 @@ public class RPG_Project {
                 "▓▓▓▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓");
         //https://www.asciiart.eu/image-to-ascii
     }
+    //materials below is for task3, t+5digit of num is the No of each term, 32 total.
     public static void t00000(Scanner scan){
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n" +
                 "X                                                              X\n" +
