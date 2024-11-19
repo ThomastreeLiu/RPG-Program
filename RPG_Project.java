@@ -181,6 +181,9 @@ public class RPG_Project {
                     "3.Act like a Medieval Knight, fly close and say Hello to them\n" +
                     "Make your decision by enter the number.");
             int deci = scan.nextInt();
+            //here is the interesting part, you will choose different section, different choosing will cause different
+            //game code, the program then could show you the correct ending of task1.
+            //No characters input allowed here
             if (deci==1)
                 process=process+2;
             else if (deci==2)
@@ -202,6 +205,12 @@ public class RPG_Project {
                     System.out.println("*\n" +
                             "You get the Achievement: Knights of old");
                     achievement = achievement + 1;
+                    //here tell you how program control with achievement code, the game will print the achievement and do changes
+                    //on achievement code only when you didn't get this achievement before, the different situations can
+                    //be describe in to 7 situation, 1,2,3,12,13,23,123. In the game achievement code are 3 digits, each digits
+                    //goes with a task, if you want to record the statement, just do +1;+2 and +4, such as the mituation
+                    //1,2 can be describe as 1+2=3, 2,3 can be describe as 2+4=6, 1,2,3 can be describe as 1+2+4=7.
+                    //it can make sure the program get the correct achievement setting.
                 }
                 process=process+1;
                 System.out.println("You are going to quit this task, try another section to win this task \n" +
@@ -211,6 +220,7 @@ public class RPG_Project {
             }
             else
                 System.out.println("You will quit this task");
+            //you will be kicked from this section, you can try it again.
         }
         while ((process%100)%10==5&&quit.equals("n")){
             System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
@@ -220,6 +230,7 @@ public class RPG_Project {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            //this code is for delay, the number inside means number of milisecond dalayed.
             System.out.println("You tell your assistant to turn the booster of engine on, the engine of supermarine \n" +
                     "start to roar, these german pilot also find you, because the blue plane under the white \n" +
                     "cloud is as conspicuous as a mole.");
@@ -258,6 +269,7 @@ public class RPG_Project {
                 }
                 achievement = achievement + 2;
             }
+            //task2 now finished
             System.out.println("Press any key to continue");
             anykey = scan.next();
             if (anykey.equals("q")||anykey.equals("Q"))
@@ -289,6 +301,7 @@ public class RPG_Project {
             anykey = scan.next();
             process=process+1;
         }
+        //task3 now finished
     }
 
 
